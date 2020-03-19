@@ -1,0 +1,51 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    margin:0;
+    padding:0;
+}
+header {
+    height: 100px;
+    width: 100vw;
+    background-color: teal;
+}
+.main-content{
+    width: 100vw;
+    height: calc(100vh - 100px);
+    background-color: violet;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.sidebar {
+    width: 40%;
+    height: 100%;
+    background-color: yellowgreen;
+}
+.main-chat {
+    width: 60%;
+    height: 100%;
+    background-color: wheat;
+}
+.chat-container{
+    height: calc(100% - 100px);
+    width: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.chat-bubble {
+    background-color: white;
+    padding: 4px;
+    border-radius: 10px;
+}
+
+
+
+.message-box{
+    width: 100%;
+    height: 100px;
+    background-color: black;
+}
