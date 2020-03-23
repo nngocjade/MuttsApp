@@ -12,12 +12,12 @@ body {
 header {
   height: 100px;
   width: 100vw;
-  background-color: rgb(177, 0, 0, .9);
+  background-color: #ad0f01;
 }
 .main-content {
   width: 100vw;
   height: calc(100vh - 100px);
-  background-color: violet;
+  background-color: #ffe3e0;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -42,8 +42,8 @@ header {
 }
 /* These are the individual message preview box */
 .message-preview-box {
-  background-color: #ffffff;
-  border: 1px solid black;
+  background-color: rgb(237, 237, 238);
+  border: 1px solid gray;
   width: 100%;
   height: 100px;
   display: flex;
@@ -56,7 +56,7 @@ header {
 }
 /* this will contain our chat image */
 .img-wrap {
-  background-color: rgb(228, 223, 228);
+  background-color: rgb(237, 237, 238);
   width: 15%;
   height: 100%;
   display: flex;
@@ -70,7 +70,7 @@ header {
 }
 /* this div will contain the message senders name and the message preview */
 .message-text-wrap {
-  background-color: gray;
+  background-color: rgb(237, 237, 238);
   width: 70%;
   height: 100%;
   display: flex;
@@ -94,12 +94,12 @@ header {
 .main-chat {
   width: 60%;
   height: 100%;
-  background-color: wheat;
+  background-color: #ffe3e0;
 }
 .chat-container {
   height: calc(100% - 100px);
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #ffe3e0;
   display: flex;
   flex-direction: column-reverse;
   justify-content: flex-start;
@@ -122,5 +122,5 @@ header {
 .message-box {
   width: 100%;
   height: 100px;
-  background-color: black;
+  background-color: #fe867b;
 }
