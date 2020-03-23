@@ -67,6 +67,7 @@ header {
   width: 49px;
   height: 49px;
   border-radius: 50%;
+  box-shadow: 3px 4px 2px rgb(187, 187, 187);
 
   /* background: coral; */
   padding: 4px;
@@ -74,11 +75,10 @@ header {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 145%;
+  border: 1px solid rgb(187, 187, 187);
 }
 
-img {
-  box-shadow: 5px 5px 2px rgb(187, 187, 187);
-}
+
 
 /* this div will contain the message senders name and the message preview */
 .message-text-wrap {
