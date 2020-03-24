@@ -10,13 +10,28 @@ body {
   padding: 0;
 }
 
-#mySVG{
-  background-color: black;
-}
+/* ========================================================
+                          HEADER
+==========================================================*/
 header {
-  height: 100px;
+  height: 75px;
   width: 100vw;
   background-color: #ece2e2;
+}
+#header-sidebar{
+  width: 40%;
+  height: 100%;
+  display: flex;
+  
+   
+}
+#header-main{
+  width: 60%;
+  height: 100%;
+}
+
+#mySVG{
+  background-color: black;
 }
 .main-content {
   width: 100vw;
@@ -71,7 +86,7 @@ header {
   width: 49px;
   height: 49px;
   border-radius: 50%;
-  box-shadow: 3px 4px 2px rgb(206, 205, 205);
+  box-shadow: 2px 2px 2px rgb(206, 205, 205);
 
   /* background: coral; */
   padding: 4px;
