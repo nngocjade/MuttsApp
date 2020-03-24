@@ -9,10 +9,14 @@ body {
   margin: 0;
   padding: 0;
 }
+
+#mySVG{
+  background-color: black;
+}
 header {
   height: 100px;
   width: 100vw;
-  background-color: #ad0f01;
+  background-color: #ece2e2;
 }
 .main-content {
   width: 100vw;
@@ -27,6 +31,7 @@ header {
   width: 40%;
   height: 100%;
 }
+
 /* This is the wrap around the message */
 .sidebar > .message-preview-wrap {
   background-color: whitesmoke;
@@ -98,6 +103,8 @@ header {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
+  color: #9e9d9d;
+  padding-right: 15px;
 }
 
 /* Main Chat Styling */
@@ -116,7 +123,7 @@ header {
 }
 .chat-container-background{
     background-image: url("./images/pokeball-clipart-black-and-white-186526-9437009.svg");
-    opacity: 0.05;
+    opacity: 0.04;
     position: absolute;
     z-index: -1;
     overflow: hidden;
@@ -130,8 +137,21 @@ header {
   border-radius: 10px;
   margin-bottom: 10px;
   max-width: 60%;
-  box-shadow: 3px 4px 2px rgb(206, 205, 205);
+  box-shadow: 1px 2px 2px rgb(206, 205, 205);
 }
+/* .chat-bubble:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 2px solid transparent;
+	border-left: 0;
+	border-top: 0;
+	margin-top: -1px;
+	margin-left: -2px;
+} */
 
 .chat-bubble.out {
   background-color: #fffec3;
