@@ -130,6 +130,7 @@ header {
   border-radius: 10px;
   margin-bottom: 10px;
   max-width: 60%;
+  box-shadow: 3px 4px 2px rgb(206, 205, 205);
 }
 
 .chat-bubble.out {
