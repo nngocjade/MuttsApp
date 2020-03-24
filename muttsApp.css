@@ -18,13 +18,19 @@ header {
   width: 100vw;
   background-color: #ece2e2;
 }
+/* === left side of the header ===*/
 #header-sidebar{
   width: 40%;
   height: 100%;
-  display: flex;
-  
-   
+  display: flex; 
 }
+#header-sidebar-icons{
+  height: 100%;
+}
+#header-sidebar-icons ul{
+  display: flex;
+}
+
 #header-main{
   width: 60%;
   height: 100%;
