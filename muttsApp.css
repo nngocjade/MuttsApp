@@ -153,6 +153,8 @@ header {
   height: 100%;
   position: relative;
   background-color: rgba(245, 242, 242, 0.9);
+  display: inline-block;
+  overflow-y: auto;
 }
 
 .main-chat:after {
@@ -167,13 +169,14 @@ header {
   right: 0;
   z-index: -1;
 }
-.chat-container, .chat-container-background {
+.chat-container {
   height: calc(100% - 100px);
-  width: 100%;
+  width: calc(100% - 40px);
   display: flex;
   flex-direction: column-reverse;
   justify-content: flex-start;
   align-items: flex-start;
+  padding: 0 20px;
 }
 /* .chat-container-background{
     background-image: url("./images/pokeball-clipart-black-and-white-186526-9437009.svg");
@@ -186,31 +189,44 @@ header {
 } */
 
 .chat-bubble {
-  background-color: rgba(252, 98, 37, 0.4);
+  background-color: rgba(252, 98, 37, 0.5);
+  box-shadow: 1px 2px 2px rgb(206, 205, 205);
   padding: 4px;
   border-radius: 10px;
   margin-bottom: 10px;
   max-width: 60%;
-  box-shadow: 1px 2px 2px rgb(206, 205, 205);
+  position: relative;
+  
 }
-/* .chat-bubble:after {
-	content: '';
-	position: absolute;
-	left: 0;
-	top: 50%;
-	width: 0;
-	height: 0;
-	border: 2px solid transparent;
-	border-left: 0;
-	border-top: 0;
-	margin-top: -1px;
-	margin-left: -2px;
-} */
+
+.chat-bubble::before{
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  /* Triangle */
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-top-color: rgb(252, 98, 37); 
+  margin-left: -10px;
+  margin-bottom: -20px
+
+}
 
 .chat-bubble.out {
-  background-color: rgba(113, 121, 116, 0.4);
+  background-color: rgba(113, 121, 116, 0.5);
   align-self: flex-end;
 }
+
+.chat-bubble.out::before{
+  border-top-color: rgba(113, 121, 116, 0.5);
+  right: -10px;
+
+}
+
+
 
 .message-box {
   width: 100%;
