@@ -18,15 +18,22 @@ header {
   width: 100vw;
   background-color: #ece2e2;
 }
+
 /* === left side of the header ===*/
 #header-sidebar{
   width: 40%;
   height: 100%;
   display: flex; 
+  justify-content: space-between; /* === space between self-image and sidebar icons ===*/ 
+    border-right: 0.5px solid rgb(207, 207, 207);
 }
 #header-sidebar-icons{
   height: 100%;
   margin-right: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 #header-sidebar-icons ul{
   display: flex;
@@ -36,8 +43,13 @@ header {
   margin: 0;
 }
 
-#header-sidebar-icons li{
+#header-sidebar-icons ul li{
   list-style-type: none;
+}
+
+#header-sidebar-icons button{
+  border: none;
+  background-color: inherit; /* === background color inherits from the parent (header) ===*/
 }
 
 #header-main{
@@ -50,7 +62,7 @@ header {
 }
 .main-content {
   width: 100vw;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 75px);
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -140,7 +152,21 @@ header {
 .main-chat {
   width: 60%;
   height: 100%;
+  position: relative;
   
+}
+
+.main-chat:after {
+  content: " ";
+  background-image: url("./images/pokeball-clipart-black-and-white-186526-9437009.svg");
+  background-size: 25px;
+  position: absolute;
+  opacity: .04;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
 }
 .chat-container, .chat-container-background {
   height: calc(100% - 100px);
@@ -150,7 +176,7 @@ header {
   justify-content: flex-start;
   align-items: flex-start;
 }
-.chat-container-background{
+/* .chat-container-background{
     background-image: url("./images/pokeball-clipart-black-and-white-186526-9437009.svg");
     opacity: 0.04;
     position: absolute;
@@ -158,7 +184,7 @@ header {
     overflow: hidden;
     width: 60%;
     background-size: 25px;
-}
+} */
 
 .chat-bubble {
   background-color: #cae8fc;
