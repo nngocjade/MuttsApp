@@ -189,43 +189,41 @@ header {
 } */
 
 .chat-bubble {
-  background-color: rgba(252, 98, 37, 0.5);
+  background-color: rgb(255, 163, 127);
   box-shadow: 1px 2px 2px rgb(206, 205, 205);
   padding: 4px;
   border-radius: 10px;
   margin-bottom: 10px;
   max-width: 60%;
   position: relative;
+  font-size: .95em;
   
 }
 
+/* Triangle */
 .chat-bubble::before{
   content: " ";
   position: absolute;
   top: 0;
-  left: 0;
-
-  /* Triangle */
+  right: -10px;
   width: 0;
   height: 0;
   border: 10px solid transparent;
-  border-top-color: rgb(252, 98, 37); 
+  border-top-color: rgb(223, 223, 223); 
   margin-left: -10px;
-  margin-bottom: -20px
+  margin-bottom: -20px;
 
+}
+
+.chat-bubble.in::before{
+  border-top-color: rgb(255, 163, 127);
+  left: 0;
 }
 
 .chat-bubble.out {
-  background-color: rgba(113, 121, 116, 0.5);
+  background-color: rgb(223, 223, 223);
   align-self: flex-end;
 }
-
-.chat-bubble.out::before{
-  border-top-color: rgba(113, 121, 116, 0.5);
-  right: -10px;
-
-}
-
 
 
 .message-box {
