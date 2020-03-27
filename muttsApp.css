@@ -55,12 +55,13 @@ header {
 #header-main-icons button {
   border: none;
   background-color: inherit; /* === background color inherits from the parent (header) ===*/
+  padding: 15px;
 }
 
 #header-main-img-phone-wrap {
   width: 30%;
   justify-content: space-around;
-  color: #727a7e;
+  color: #656a6d;
 }
 
 #header-main {
