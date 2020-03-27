@@ -53,15 +53,16 @@ header {
   background-color: inherit; /* === background color inherits from the parent (header) ===*/
 }
 
+#header-main-img-phone-wrap{
+  width: 30%;
+  justify-content: space-around;
+}
+
 #header-main{
   width: 60%;
   height: 100%;
   display: flex;
   justify-content: space-between;
-}
-
-.svg-wrap{
-
 }
 
 .main-content {
@@ -107,7 +108,7 @@ header {
 }
 /* this will contain our chat image */
 .img-wrap {
-  width: 15%;
+  width: 20%;
   height: 100%;
   display: flex;
   align-items: center;
