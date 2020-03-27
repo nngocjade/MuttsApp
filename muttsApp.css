@@ -3,7 +3,7 @@
   text-rendering: optimizeLegibility;
 }
 body {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   width: 100vw;
   height: 100vh;
   margin: 0;
@@ -21,14 +21,15 @@ header {
 }
 
 /* === left side of the header ===*/
-#header-sidebar{
+#header-sidebar {
   width: 40%;
   height: 100%;
-  display: flex; 
-  justify-content: space-between; /* === space between self-image and sidebar icons ===*/ 
-    border-right: 1px solid rgb(207, 207, 207);
+  display: flex;
+  justify-content: space-between; /* === space between self-image and sidebar icons ===*/
+  border-right: 1px solid rgb(207, 207, 207);
 }
-#header-sidebar-icons, #header-main-icons{
+#header-sidebar-icons,
+#header-main-icons {
   height: 100%;
   margin-right: 10px;
   display: flex;
@@ -36,7 +37,8 @@ header {
   justify-content: space-between;
   align-items: center;
 }
-#header-sidebar-icons ul, #header-main-icons ul{
+#header-sidebar-icons ul,
+#header-main-icons ul {
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -44,22 +46,24 @@ header {
   margin: 0;
 }
 
-#header-sidebar-icons ul li, #header-main-icons ul li{
+#header-sidebar-icons ul li,
+#header-main-icons ul li {
   list-style-type: none;
 }
 
-#header-sidebar-icons button, #header-main-icons button{
+#header-sidebar-icons button,
+#header-main-icons button {
   border: none;
   background-color: inherit; /* === background color inherits from the parent (header) ===*/
 }
 
-#header-main-img-phone-wrap{
+#header-main-img-phone-wrap {
   width: 30%;
   justify-content: space-around;
-  color: #727A7E;
+  color: #727a7e;
 }
 
-#header-main{
+#header-main {
   width: 60%;
   height: 100%;
   display: flex;
@@ -75,8 +79,8 @@ header {
   align-items: flex-start;
 }
 
-button > svg > path{
-  fill: rgb(175, 175, 175);
+button > svg > path {
+  fill: rgb(165, 165, 165);
 }
 /* ========================================================
                           SIDEBAR
@@ -106,7 +110,6 @@ button > svg > path{
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
-  
 }
 .message-preview-box:hover {
   background-color: rgb(237, 237, 238);
@@ -133,8 +136,6 @@ button > svg > path{
   border: 1px solid rgb(190, 187, 187);
 }
 
-
-
 /* this div will contain the message senders name and the message preview */
 .message-text-wrap {
   width: 70%;
@@ -159,7 +160,7 @@ button > svg > path{
 }
 /* ========================================================
                       MAIN CHAT
-==========================================================*/    
+==========================================================*/
 .main-chat {
   width: 60%;
   height: 100%;
@@ -174,7 +175,7 @@ button > svg > path{
   background-image: url("./images/pokeball-clipart-black-and-white-186526-9437009.svg");
   background-size: 25px;
   position: absolute;
-  opacity: .4;
+  opacity: 0.4;
   top: 0;
   left: 0;
   bottom: 0;
@@ -190,14 +191,14 @@ button > svg > path{
   align-items: flex-start;
   padding: 0 20px;
 }
-.chat-container-background{
-    background-image: url("./images/pokeball-clipart-black-and-white-186526-9437009.svg");
-    opacity: 0.04;
-    position: absolute;
-    z-index: -1;
-    overflow: hidden;
-    width: 60%;
-    background-size: 25px;
+.chat-container-background {
+  background-image: url("./images/pokeball-clipart-black-and-white-186526-9437009.svg");
+  opacity: 0.04;
+  position: absolute;
+  z-index: -1;
+  overflow: hidden;
+  width: 60%;
+  background-size: 25px;
 }
 
 .chat-bubble {
@@ -208,12 +209,11 @@ button > svg > path{
   margin-bottom: 10px;
   max-width: 60%;
   position: relative;
-  font-size: .95em;
-  
+  font-size: 0.95em;
 }
 
 /* Triangle */
-.chat-bubble::before{
+.chat-bubble::before {
   content: " ";
   position: absolute;
   top: 0;
@@ -221,13 +221,12 @@ button > svg > path{
   width: 0;
   height: 0;
   border: 10px solid transparent;
-  border-top-color: rgb(250, 178, 149); 
+  border-top-color: rgb(250, 178, 149);
   margin-left: -10px;
   margin-bottom: -20px;
-
 }
 
-.chat-bubble.in::before{
+.chat-bubble.in::before {
   border-top-color: rgb(243, 243, 241);
   left: 0;
 }
@@ -237,27 +236,54 @@ button > svg > path{
   align-self: flex-end;
 }
 
-
 .message-box {
   width: 100%;
   height: 100px;
-  background-color: #bdbdbd;
+  background-color: rgb(237, 237, 238);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.message-box .form-wrap {
+  width: 80%;
+  height: 50%;
+  border-radius: 20px;
+  background-color: white;
+}
 
+button.svg-wrap {
+  border: none;
+  background-color: inherit;
+}
+.form-wrap form {
+  height: 100%;
+  width: 100%;
+}
 
+input[name="message"] {
+  border: none;
+  height: 60%;
+  width: 95%;
+  padding: 5px;
+  outline: none; /* === this gets rid of the blue outline ===*/
+}
 
 /* apply properties that you want changed */
-@media (max-width: 905px){ 
+@media (max-width: 905px) {
   .img-wrap {
-  width: 40%;
-}
-.message-preview-box {
-  height: 100px;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  
-}
+    width: 40%;
+  }
+  .message-preview-box {
+    height: 100px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
 }
