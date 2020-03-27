@@ -11,6 +11,16 @@ const createChatBubble = (outIn) => {
  wrapper.appendChild(ChatBubble)
 }
 
+const createMessagePreviewBox = (inMessagePreview) => {
+ let MessagePreviewBox = document.createElement('div');
+ MessagePreviewBox.classList.add("message-preview-box", inMessagePreview);
+
+ let imgWrap = document.createElement('div');
+ imgWrap.classList.add("img-wrap");
+
+ let
+}
+
 for(let idx = 0; idx < 10; idx++){
  
  if(idx % 2 === 0){           //if even add chat bubble out
