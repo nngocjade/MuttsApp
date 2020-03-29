@@ -69,7 +69,7 @@ let chats = [
     img: "./images/icons8-bullbasaur-50.png",
     alt: "bullbasaur",
     msg: "hi",
-    name: "bulasaur",
+    name: "Bullbasaur",
     date: "3/12/20"
   },
   {
@@ -78,6 +78,34 @@ let chats = [
     msg: "hello",
     name: "pikachu",
     date: "3/19/20"
+  },
+  {
+    img: "./images/icons8-charmander-50.png",
+    alt: "charmander",
+    msg: "How it's going?",
+    name: "Charmander",
+    date: "3/20/20"
+  },
+  {
+    img: "./images/icons8-eevee-50.png",
+    alt: "eevee",
+    msg: "Hey girl!",
+    name: "Eevee",
+    date: "3/21/20"
+  },
+  {
+    img: "./images/icons8-jigglypuff-50.png",
+    alt: "jigglypuff",
+    msg: "Wanna hangout?",
+    name: "Jiggly Puff",
+    date: "3/22/20"
+  },
+  {
+    img: "./images/icons8-dratini-50.png",
+    alt: "dratini",
+    msg: "See ya later!",
+    name: "Dratini",
+    date: "3/23/20"
   }
 ];
 
