@@ -1,9 +1,9 @@
-const createChatBubble = outIn => {
+const createChatBubble = (msg) => {
   let ChatBubble = document.createElement("div");
   ChatBubble.classList.add("chat-bubble", outIn);
 
   let paragraph = document.createElement("p");
-  paragraph.innerText = "This is a Javascript created Paragraph";
+  paragraph.innerText = msg;
 
   ChatBubble.appendChild(paragraph);
 
@@ -11,35 +11,21 @@ const createChatBubble = outIn => {
   wrapper.appendChild(ChatBubble);
 };
 
-// let newMessageForm = document.getElementById('send-message')
+let newMessageForm = document.getElementById('send-message')
 
-// newMessageForm.addEventListener('submit', function(e){
-//   e.preventDefault
-//   newMessageForm.addEventListener('new-message')
-// })
+newMessageForm.addEventListener('submit', function(event){
+  event.preventDefault
+  let msg = document.getElementById('new-message').value;
+  createChatBubble(msg);
+  document.getElementById('new-message').value = "";
+});
 
-
-// (function getUsers() {
-//   fetch('http://localhost:8080/muttsApp.html')
-//     .then(res => { return res.json() 
-//     })
-//     .then(dataobj => (
-//       let chatsArr = dataObj.data;
-//       data.data.forEach( (chat) => {
-//           createMessagePreviewBox(chat)
-//       })
-//     )
-// })();
-
-// function
-
-const createMessagePreviewBox = chatObj => {
+function createMessagePreviewBox (chatObj) {
   let MessagePreviewBox = document.createElement("div");
   MessagePreviewBox.classList.add("message-preview-box");
 
   let imgWrap = document.createElement("div");
   imgWrap.classList.add("img-wrap");
-
   let img = new Image();
   img.src = chatObj.img;
   img.alt = chatObj.alt;
@@ -48,10 +34,8 @@ const createMessagePreviewBox = chatObj => {
 
   let messageTextWrap = document.createElement("div");
   messageTextWrap.classList.add("message-text-wrap");
-
   let SenderNameParagraph = document.createElement("p");
   SenderNameParagraph.innerText = chatObj.name;
-
   let SenderMessageParagraph = document.createElement("p");
   SenderMessageParagraph.innerText = chatObj.msg;
 
@@ -60,7 +44,6 @@ const createMessagePreviewBox = chatObj => {
 
   let dateWrap = document.createElement("div");
   dateWrap.classList.add("date-wrap");
-
   let dateParagraph = document.createElement("p");
   dateParagraph.innerHTML = new Date(chatObj.date).toLocaleDateString(); //always instantiate a new date
 
@@ -76,15 +59,6 @@ const createMessagePreviewBox = chatObj => {
   MessagePreviewWrapper.appendChild(MessagePreviewBox);
 };
 
-for (let idx = 0; idx < 10; idx++) {
-  if (idx % 2 === 0) {
-    //if even add chat bubble out
-    createChatBubble("out");
-  } else {
-    //if odd add chat bubble in
-    createChatBubble("in");
-  }
-}
 
 let chats = [
   {
