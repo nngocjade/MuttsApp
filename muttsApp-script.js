@@ -11,6 +11,28 @@ const createChatBubble = outIn => {
   wrapper.appendChild(ChatBubble);
 };
 
+// let newMessageForm = document.getElementById('send-message')
+
+// newMessageForm.addEventListener('submit', function(e){
+//   e.preventDefault
+//   newMessageForm.addEventListener('new-message')
+// })
+
+
+// (function getUsers() {
+//   fetch('http://localhost:8080/muttsApp.html')
+//     .then(res => { return res.json() 
+//     })
+//     .then(dataobj => (
+//       let chatsArr = dataObj.data;
+//       data.data.forEach( (chat) => {
+//           createMessagePreviewBox(chat)
+//       })
+//     )
+// })();
+
+// function
+
 const createMessagePreviewBox = chatObj => {
   let MessagePreviewBox = document.createElement("div");
   MessagePreviewBox.classList.add("message-preview-box");
@@ -40,7 +62,7 @@ const createMessagePreviewBox = chatObj => {
   dateWrap.classList.add("date-wrap");
 
   let dateParagraph = document.createElement("p");
-  dateParagraph.innerText = chatObj.date;
+  dateParagraph.innerHTML = new Date(chatObj.date).toLocaleDateString(); //always instantiate a new date
 
   dateWrap.appendChild(dateParagraph);
 
@@ -112,3 +134,4 @@ let chats = [
 chats.forEach(chat => {
   createMessagePreviewBox(chat);
 });
+

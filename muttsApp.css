@@ -295,7 +295,6 @@ input[name="message"] {
   border: none;
   height: 60%;
   width: 90%;
-  padding: 5px;
   outline: none; /* === this gets rid of the blue outline ===*/
 }
 
