@@ -1,6 +1,6 @@
-const createChatBubble = (msg) => {
+function createChatBubble(msg) {
   let ChatBubble = document.createElement("div");
-  ChatBubble.classList.add("chat-bubble", outIn);
+  ChatBubble.classList.add("chat-bubble", "out");
 
   let paragraph = document.createElement("p");
   paragraph.innerText = msg;
@@ -9,18 +9,19 @@ const createChatBubble = (msg) => {
 
   let wrapper = document.getElementById("chat-bubble-wrapper");
   wrapper.appendChild(ChatBubble);
-};
+}
 
-let newMessageForm = document.getElementById('send-message')
-
-newMessageForm.addEventListener('submit', function(event){
-  event.preventDefault
-  let msg = document.getElementById('new-message').value;
-  createChatBubble(msg);
-  document.getElementById('new-message').value = "";
+//Attach a "submit" listener to the message form
+let newMessageForm = document.getElementById("send-message");
+newMessageForm.addEventListener("submit", function(event) {
+  //pass a callback function, submission of form occurs then the function is called
+  event.preventDefault(); //overrides html form submission, IMPORTANT!
+  let msg = document.getElementById("new-message").value; //storing the inputted value by user into "msg"
+  createChatBubble(msg); //passing "msg" into "createChatBubble" function
+  document.getElementById("new-message").value = " "; //deleting (clearing) value in the input, because it is now on the screen/in chat
 });
 
-function createMessagePreviewBox (chatObj) {
+function createMessagePreviewBox(chatObj) {
   let MessagePreviewBox = document.createElement("div");
   MessagePreviewBox.classList.add("message-preview-box");
 
@@ -57,8 +58,7 @@ function createMessagePreviewBox (chatObj) {
     "message-preview-wrapper"
   );
   MessagePreviewWrapper.appendChild(MessagePreviewBox);
-};
-
+}
 
 let chats = [
   {
@@ -108,4 +108,3 @@ let chats = [
 chats.forEach(chat => {
   createMessagePreviewBox(chat);
 });
-
