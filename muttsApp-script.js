@@ -1,4 +1,5 @@
 let userId = parseInt("3");
+let baseUrl = "http://demo.codingnomads.co:8082/muttsapp";
 
 //--------------------   CREATE CHAT BUBBLE   --------------------//
 
@@ -24,7 +25,7 @@ function createChatBubble(msgObj) {
 
 function createChatBubbles(dataObj) {
   let chatsArr = dataObj.data;
-  chatsArr.forEach(chatObj => createChatBubble(chatObj));
+  chatsArr.forEach((chatObj) => createChatBubble(chatObj));
 }
 
 //--------------------   GET USER CHATS    --------------------//
@@ -32,9 +33,9 @@ function createChatBubbles(dataObj) {
 function getUserChats() {
   document.getElementById("message-preview-wrapper").innerHTML = ""; //clears previous message before fetching for new one(s)
 
-  fetch("http://demo.codingnomads.co:8080/muttsapp/users/" + userId + "/chats/")
-    .then(Response => Response.json())
-    .then(dataObj => createPreviewBoxes(dataObj));
+  fetch(`${baseUrl}/users/${userId}/chats/`)
+    .then((Response) => Response.json())
+    .then((dataObj) => createPreviewBoxes(dataObj));
 
   // .then(function(dataObj){
   //   createPreviewBoxes(dataObj);
@@ -107,7 +108,7 @@ function createMessagePreviewBox(chatObj) {
 
 function createPreviewBoxes(dataObj) {
   let chatsArr = dataObj.data;
-  chatsArr.forEach(chatObj => createMessagePreviewBox(chatObj));
+  chatsArr.forEach((chatObj) => createMessagePreviewBox(chatObj));
 }
 
 //--------------------   PREVIEW BOX CLICK  --------------------//
@@ -120,21 +121,16 @@ function previewBoxClick(event) {
 
   document.getElementById("send-message").dataset.chat_id = chatID; //getting message form data attribute and setting to chatID
 
-  fetch(
-    "http://demo.codingnomads.co:8080/muttsapp/users/" +
-      userId +
-      "/chats/" +
-      senderID
-  )
-    .then(ressponse => ressponse.json())
-    .then(dataObj => createChatBubbles(dataObj));
+  fetch(`${baseUrl}/users/${userId}/chats/${senderID}`)
+    .then((ressponse) => ressponse.json())
+    .then((dataObj) => createChatBubbles(dataObj));
 }
 
 //--------------------   ADD EVENT(SUBMIT) LISTENER    --------------------//
 
 let newMessageForm = document.getElementById("send-message");
 
-newMessageForm.addEventListener("submit", function(event) {
+newMessageForm.addEventListener("submit", function (event) {
   event.preventDefault(); //
   console.log(event);
 
@@ -143,7 +139,7 @@ newMessageForm.addEventListener("submit", function(event) {
   let msgObj = {
     message: msg,
     sender_id: userId,
-    chat_id: event.target.dataset.chat_id //parsing into the event object target > dataset > chat_id
+    chat_id: event.target.dataset.chat_id, //parsing into the event object target > dataset > chat_id
 
     // chat_id: document.getElementById('send-message').dataset.chat_id
   };
@@ -160,16 +156,13 @@ function sendMessageToAPI(msgObj) {
   let postParams = {
     method: "POST", // *GET, POST, PUT, DELETE, etc.
     headers: {
-      "Content-Type": "application/json; charset=UTF-8"
+      "Content-Type": "application/json; charset=UTF-8",
     },
-    body: JSON.stringify(msgObj)
+    body: JSON.stringify(msgObj),
   };
-  fetch(
-    `http://demo.codingnomads.co:8080/muttsapp/users/${userId}/chat`,
-    postParams
-  )
-    .then(res => res.json())
-    .then(res => getUserChats());
+  fetch(`${baseUrl}/users/${userId}/chat`, postParams)
+    .then((res) => res.json())
+    .then((res) => getUserChats());
 }
 
 //--------------------   NEW USER    --------------------//
@@ -179,18 +172,18 @@ function newUser() {
     first_name: "",
     last_name: "",
     username: "",
-    photo_url: ""
+    photo_url: "",
   };
   let postParams = {
     method: "POST", // *GET, POST, PUT, DELETE, etc.
     headers: {
-      "Content-Type": "application/json; charset=UTF-8"
+      "Content-Type": "application/json; charset=UTF-8",
     },
-    body: JSON.stringify(postData)
+    body: JSON.stringify(postData),
   };
-  fetch("http://demo.codingnomads.co:8080/muttsapp/users/", postParams)
-    .then(res => res.json())
-    .then(res => console.log(res));
+  fetch(`${baseUrl}/users/`, postParams)
+    .then((res) => res.json())
+    .then((res) => console.log(res));
 }
 
 //******* SAVED FOR LATER!! *******
