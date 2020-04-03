@@ -100,6 +100,7 @@ button > svg > path {
   align-items: flex-start;
   justify-content: flex-start;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 /* CUSTOM SCROLL BAR */
@@ -170,6 +171,9 @@ button > svg > path {
 }
 .message-text-wrap > p {
   margin: 0;
+  /* word-wrap: break-word; */
+  /* word-break: break-all; */
+  text-overflow: ellipsis;
 }
 /* this div will hold the date */
 .date-wrap {

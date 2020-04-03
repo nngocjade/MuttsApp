@@ -1,5 +1,7 @@
 let userId = parseInt("3");
 
+//--------------------   CREATE CHAT BUBBLE   --------------------//
+
 function createChatBubble(msgObj) {
   console.log(msgObj);
   let ChatBubble = document.createElement("div");
@@ -18,29 +20,30 @@ function createChatBubble(msgObj) {
   wrapper.prepend(ChatBubble); //add messages to the beginning
 }
 
-//Attach a "submit" listener to the message form
-let newMessageForm = document.getElementById("send-message");
-newMessageForm.addEventListener("submit", function(event) {
-  //pass a callback function, submission of form occurs then the function is called
-  event.preventDefault(); //overrides html form submission, IMPORTANT!
-  let msg = document.getElementById("new-message").value; //storing the inputted value by user into "msg"
-  createChatBubble(msg);
-  //passing "msg" into "createChatBubble" function
-  document.getElementById("new-message").value = " "; //deleting (clearing) value in the input, because it is now on the screen/in chat
-});
+//--------------------   CREATE CHAT BUBBLE(S)   --------------------//
 
-//As soon as JS file loads, we run this function to get all the items for the sidebar
+function createChatBubbles(dataObj) {
+  let chatsArr = dataObj.data;
+  chatsArr.forEach(chatObj => createChatBubble(chatObj));
+}
+
+//--------------------   GET USER CHATS    --------------------//
+
 function getUserChats() {
+  document.getElementById("message-preview-wrapper").innerHTML = ""; //clears previous message before fetching for new one(s)
+
   fetch("http://demo.codingnomads.co:8080/muttsapp/users/" + userId + "/chats/")
     .then(Response => Response.json())
     .then(dataObj => createPreviewBoxes(dataObj));
+
+  // .then(function(dataObj){
+  //   createPreviewBoxes(dataObj);
+  // })
 }
+
 getUserChats();
 
-function createPreviewBoxes(dataObj) {
-  let chatsArr = dataObj.data;
-  chatsArr.forEach(chatObj => createMessagePreviewBox(chatObj));
-}
+//--------------------   CREATE MESSAGE PREVIEW BOX   --------------------//
 
 function createMessagePreviewBox(chatObj) {
   console.log(chatObj);
@@ -68,12 +71,12 @@ function createMessagePreviewBox(chatObj) {
   textWrap.setAttribute("data-sender_id", chatObj.sender_id);
   textWrap.classList.add("message-text-wrap");
   let nameParagraph = document.createElement("p");
-  nameParagraph.setAttribute("chat-chat_id", chatObj.chat_id);
-  nameParagraph.setAttribute("chat-sender_id", chatObj.sender_id);
+  nameParagraph.setAttribute("data-chat_id", chatObj.chat_id);
+  nameParagraph.setAttribute("data-sender_id", chatObj.sender_id);
   nameParagraph.innerText = chatObj.chat_name;
   let messageParagraph = document.createElement("p");
-  messageParagraph.setAttribute("chat-chat_id", chatObj.chat_id);
-  messageParagraph.setAttribute("chat-sender_id", chatObj.sender_id);
+  messageParagraph.setAttribute("data-chat_id", chatObj.chat_id);
+  messageParagraph.setAttribute("data-sender_id", chatObj.sender_id);
   messageParagraph.innerText = chatObj.last_message;
 
   textWrap.appendChild(nameParagraph);
@@ -100,52 +103,95 @@ function createMessagePreviewBox(chatObj) {
   MessagePreviewWrapper.appendChild(MessagePreviewBox);
 }
 
+//--------------------   CREATE PREVIEW BOXE(S)  --------------------//
+
+function createPreviewBoxes(dataObj) {
+  let chatsArr = dataObj.data;
+  chatsArr.forEach(chatObj => createMessagePreviewBox(chatObj));
+}
+
+//--------------------   PREVIEW BOX CLICK  --------------------//
+
 function previewBoxClick(event) {
   document.getElementById("chat-bubble-wrapper").innerHTML = " ";
-  // This gets the value of the "data-chat_id" attribute on the clicked element
+  console.log(event.target);
   let chatID = event.target.dataset.chat_id;
   let senderID = event.target.dataset.sender_id;
-  //The value of "chatID" is passed to this url, to create a dynamically generated API based on which preview box is clicked
+
+  document.getElementById("send-message").dataset.chat_id = chatID; //getting message form data attribute and setting to chatID
+
   fetch(
     "http://demo.codingnomads.co:8080/muttsapp/users/" +
       userId +
       "/chats/" +
       senderID
   )
-    //The info retrieved in the fetch request returns a response object.
-    //The response object is assigned to the parameter in the following method as "response"
     .then(ressponse => ressponse.json())
-    //The response object needs to be turned into a JS object for parsing. That process is above, then the result is passed to the next '.then' method
-
-    // The object created in the last step is assigned to "dataObj", then the data object is passed to a function that handles the creation of a chat message bubble
     .then(dataObj => createChatBubbles(dataObj));
 }
 
-function createChatBubbles(dataObj) {
-  let chatsArr = dataObj.data;
-  chatsArr.forEach(chatObj => createChatBubble(chatObj));
+//--------------------   ADD EVENT(SUBMIT) LISTENER    --------------------//
+
+let newMessageForm = document.getElementById("send-message");
+
+newMessageForm.addEventListener("submit", function(event) {
+  event.preventDefault(); //
+  console.log(event);
+
+  let msg = document.getElementById("new-message").value;
+
+  let msgObj = {
+    message: msg,
+    sender_id: userId,
+    chat_id: event.target.dataset.chat_id //parsing into the event object target > dataset > chat_id
+
+    // chat_id: document.getElementById('send-message').dataset.chat_id
+  };
+
+  createChatBubble(msgObj);
+  sendMessageToAPI(msgObj);
+
+  document.getElementById("new-message").value = " ";
+});
+
+//--------------------   SEND MESSAGE TO API   --------------------//
+
+function sendMessageToAPI(msgObj) {
+  let postParams = {
+    method: "POST", // *GET, POST, PUT, DELETE, etc.
+    headers: {
+      "Content-Type": "application/json; charset=UTF-8"
+    },
+    body: JSON.stringify(msgObj)
+  };
+  fetch(
+    `http://demo.codingnomads.co:8080/muttsapp/users/${userId}/chat`,
+    postParams
+  )
+    .then(res => res.json())
+    .then(res => getUserChats());
 }
 
+//--------------------   NEW USER    --------------------//
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function newUser() {
+  let postData = {
+    first_name: "",
+    last_name: "",
+    username: "",
+    photo_url: ""
+  };
+  let postParams = {
+    method: "POST", // *GET, POST, PUT, DELETE, etc.
+    headers: {
+      "Content-Type": "application/json; charset=UTF-8"
+    },
+    body: JSON.stringify(postData)
+  };
+  fetch("http://demo.codingnomads.co:8080/muttsapp/users/", postParams)
+    .then(res => res.json())
+    .then(res => console.log(res));
+}
 
 //******* SAVED FOR LATER!! *******
 // let chats = [
