@@ -126,6 +126,34 @@ function previewBoxClick(event) {
     .then((dataObj) => createChatBubbles(dataObj));
 }
 
+
+
+
+//---------------------GET MODAL ELEMENT------------------------
+
+//---get modal element
+let modal = document.getElementById('popup-modal-window')
+
+//---get open modal button
+let modalButton = document.getElementById('modal-button')
+
+//---get close button
+let closeButton = document.getElementById('close-button')
+
+//---listen for click
+modalButton.addEventListener('click', openModal)
+
+//---Function to open modal
+function openModal(){
+  console.log('it works!')
+  modal.style.display = 'block';
+}
+
+
+
+
+
+
 //--------------------   ADD EVENT(SUBMIT) LISTENER    --------------------//
 
 let newMessageForm = document.getElementById("send-message");
