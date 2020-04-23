@@ -126,33 +126,42 @@ function previewBoxClick(event) {
     .then((dataObj) => createChatBubbles(dataObj));
 }
 
-
-
-
 //---------------------GET MODAL ELEMENT------------------------
 
 //---get modal element
-let modal = document.getElementById('popup-modal-window')
+let modal = document.getElementById("popup-modal-window");
 
 //---get open modal button
-let modalButton = document.getElementById('modal-button')
+let modalButton = document.getElementById("modal-button");
 
 //---get close button
-let closeButton = document.getElementById('close-button')
+let closeButton = document.getElementsByClassName("close-button")[0];
 
-//---listen for click
-modalButton.addEventListener('click', openModal)
+//---listen for OPEN click
+modalButton.addEventListener("click", openModal);
+
+//---listen for CLOSE click
+closeButton.addEventListener("click", closeModal);
+
+//---Listen for OUTSIDE click
+window.addEventListener("click", outsideClick);
 
 //---Function to open modal
-function openModal(){
-  console.log('it works!')
-  modal.style.display = 'block';
+function openModal() {
+  modal.style.display = "block";
 }
 
+//---Function to close modal
+function closeModal() {
+  modal.style.display = "none";
+}
 
-
-
-
+//Function to close modal if outside click
+function outsideClick(event) {
+  if (event.target == modal){
+    modal.style.display = "none";
+  } 
+}
 
 //--------------------   ADD EVENT(SUBMIT) LISTENER    --------------------//
 
