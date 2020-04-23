@@ -80,9 +80,6 @@ header {
   align-items: flex-start;
 }
 
-button > svg > path {
-  fill: rgb(165, 165, 165);
-}
 /* ========================================================
                           SIDEBAR
 ==========================================================*/
@@ -184,6 +181,26 @@ button > svg > path {
   justify-content: flex-start;
   color: #9e9d9d;
   padding-right: 15px;
+}
+
+
+path{
+  margin: 6px;
+}
+button > svg > path {
+  fill: rgb(165, 165, 165);
+}
+
+button>svg>path:hover{
+  fill: rgb(112, 112, 112);
+}
+
+
+
+/* ====================== MODAL BUTTON AND POPUP WINDOW ===================*/
+
+.modal-window {
+  display: none;
 }
 
 /* ========================================================
@@ -304,7 +321,7 @@ input[name="message"] {
 }
 
 /* apply properties that you want changed */
-@media (max-width: 905px) {
+/* @media (max-width: 905px) {
   .img-wrap {
     width: 40%;
   }
@@ -314,4 +331,4 @@ input[name="message"] {
     justify-content: flex-start;
     align-items: center;
   }
-}
+} */
