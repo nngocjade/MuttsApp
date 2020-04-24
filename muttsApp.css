@@ -10,6 +10,10 @@ body {
   padding: 0;
 }
 
+.fa.fa-angle-left{
+  font-size: 24px;
+}
+
 /* ========================================================
                           HEADER
 ==========================================================*/
@@ -187,9 +191,10 @@ header {
   padding-right: 15px;
 }
 
-path {
-  margin: 6px;
-}
+/* ========================================================
+                        BUTTONS
+==========================================================*/
+
 button > svg > path {
   fill: rgb(165, 165, 165);
 }
@@ -198,7 +203,9 @@ button:hover > svg > path {
   fill: rgb(112, 112, 112);
 }
 
-/* ====================== MODAL BUTTON AND POPUP WINDOW ===================*/
+/* ========================================================
+              MODAL BUTTON AND POPUP WINDOW 
+==========================================================*/
 
 .modal-window {
   display: none;
@@ -228,7 +235,7 @@ button:hover > svg > path {
 .modal-content{
   background-color: #f4f4f4;
   margin: 0;
-  width: 40%;
+  width: 30%;
   height: 100%;
   float: left;
   top: 0;
