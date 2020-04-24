@@ -252,14 +252,22 @@ button:hover > svg > path {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+.modal-body{
+  height: 100vh;
+}
+
 .modal-header{
+  width: 30%;
   height: 45px;
   background: rgb(175, 175, 175);
-  padding: 15px;
+  padding: 15px 0 15px 0;
+  margin: 0;
   color: rgb(238, 238, 238);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  animation-name: modalopen;
+  animation-duration: 1s;
 }
 
 .modal-content{
@@ -274,6 +282,30 @@ button:hover > svg > path {
   animation-name: modalopen;
   animation-duration: 1s;
 }
+
+.contact-wrap{
+  height: 70%;
+}
+
+.form-wrap {
+  width: 95%;
+  height: 10%;
+  border-radius: 20px;
+  background-color: white;
+}
+
+.form-wrap form {
+  height: 30%;
+  width: 100%;
+}
+
+input[name="search"] {
+  border: none;
+  height: 60%;
+  width: 90%;
+  outline: none; /* === this gets rid of the blue outline ===*/
+}
+
 
 /* ========================================================
                       MAIN CHAT
@@ -380,6 +412,7 @@ button.svg-wrap {
   border: none;
   background-color: inherit;
 }
+
 .form-wrap form {
   height: 100%;
   width: 100%;
