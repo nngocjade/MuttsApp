@@ -208,6 +208,16 @@ button > svg > path:hover {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+.modal-header{
+  background: rgb(175, 175, 175);
+  padding: 15px;
+  color: rgb(238, 238, 238);
+}
+
+.modal-header > h2{
+  margin: 0;
+}
+
 .modal-content{
   background-color: #f4f4f4;
   margin: 0;
