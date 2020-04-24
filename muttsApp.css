@@ -64,6 +64,10 @@ header {
   color: #656a6d;
 }
 
+#header-main,.main-content{
+  transition: opacity 0.5s linear;
+}
+
 #header-main {
   width: 70%;
   height: 100%;
@@ -190,7 +194,7 @@ button > svg > path {
   fill: rgb(165, 165, 165);
 }
 
-button > svg > path:hover {
+button:hover > svg > path {
   fill: rgb(112, 112, 112);
 }
 
@@ -209,13 +213,16 @@ button > svg > path:hover {
 }
 
 .modal-header{
+  height: 45px;
   background: rgb(175, 175, 175);
   padding: 15px;
   color: rgb(238, 238, 238);
+  display: flex;
+  align-items: center;
 }
 
-.modal-header > h2{
-  margin: 0;
+.modal-header > h2, .modal-header > i{
+  margin: 0 0 0 15px;
 }
 
 .modal-content{
@@ -233,8 +240,6 @@ button > svg > path:hover {
 
 .close-button{
   color: #ccc;
-  float: right;
-  font-size: 30px;
 }
 
 .close-button:hover, .close-button:focus{
@@ -244,8 +249,13 @@ button > svg > path:hover {
 }
 
 @keyframes modalopen{
-  from{opacity: 0}
-  to{opacity: 1}
+  from{transform: translateX(-500px)}
+  to{transform: translateX(0)}
+}
+
+@keyframes background-opacity{
+  from{opacity: 1}
+  to{opacity: .2}
 }
 
 /* ========================================================
