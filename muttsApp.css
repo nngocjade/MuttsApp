@@ -268,23 +268,27 @@ button:hover > svg > path {
 
 .modal-header{
   width: 100%;
-  height: 11%;
+  height: 45px;
   background: rgb(175, 175, 175);
   padding: 15px 0 15px 0;
   color: rgb(238, 238, 238);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .modal-content{
   width: 100%;
-  height: 70%;
+  height: 100%;
   padding-top: 15px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
+  background-color: #f4f4f4;
+}
+
+.search.form-wrap{
+
 }
 
 .contact-wrap{
@@ -316,7 +320,28 @@ input[name="search"] {
   outline: none; /* === this gets rid of the blue outline ===*/
 }
 
+/* ------------------CONTACT SECTION------------------ */
 
+.contact-preview-wrap{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.contact-preview-box{
+  background-color: #ffffff;
+  border: 0.5px solid rgb(231, 229, 229);
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
 
 
 /* ========================================================
