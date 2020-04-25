@@ -264,6 +264,7 @@ button:hover > svg > path {
   box-shadow: 0 5px 8px 0 rgb(0,0,0 0.2), 0 7px 20px 0 rgba(0,0,0,0.17);
   animation-name: modalopen;
   animation-duration: .5s;
+  overflow: hidden;
 }
 
 .modal-header{
@@ -284,23 +285,25 @@ button:hover > svg > path {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   background-color: #f4f4f4;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
-.search.form-wrap{
-
-}
 
 .contact-wrap{
   height: 70%;
 }
 
-.form-wrap {
+.search.form-wrap {
   width: 95%;
   height: 45px;
   border-radius: 20px;
   background-color: white;
+  margin-bottom: 15px;
 }
+
 
 .form-wrap form {
   height: 30%;
