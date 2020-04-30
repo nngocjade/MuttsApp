@@ -100,32 +100,45 @@ header {
                 SEARCH ICON HOVER EXPAND 
 ==========================================================*/
 
-#expand-search-header-form{
+.expand-search-header-form{
   height: 40px;
-  width: 225px;
   background-color: white;
   border-radius: 40px;
-  padding: 5px;
+}
+
+.expand-search-header-form:hover{
+   padding-left: 10px;
+}
+
+.expand-search-header-form:hover > #expand-search-input{
+  width: 180px;
+   
 }
 
 .expand-search-button.fa.fa-search{
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #9e9d9d;
+  background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #969696;
+  color: rgb(165, 165, 165);
 }
+
+.expand-search-button.fa.fa-search:hover{
+  color: rgb(112, 112, 112);
+}
+
 
 #expand-search-input{
-  /* color: white; */
-  /* font-size: 16px;
-  line-height: 40px; */
-  transition: 0.4s;
-
+  transition: 0.2s;
+  width: 0;
+  background-color: white;
 }
+
+
+
 
 
 
