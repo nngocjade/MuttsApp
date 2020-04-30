@@ -97,6 +97,39 @@ header {
 }
 
 /* ========================================================
+                SEARCH ICON HOVER EXPAND 
+==========================================================*/
+
+#expand-search-header-form{
+  height: 40px;
+  width: 225px;
+  background-color: white;
+  border-radius: 40px;
+  padding: 5px;
+}
+
+.expand-search-button.fa.fa-search{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #9e9d9d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #969696;
+}
+
+#expand-search-input{
+  /* color: white; */
+  /* font-size: 16px;
+  line-height: 40px; */
+  transition: 0.4s;
+
+}
+
+
+
+/* ========================================================
                           SIDEBAR
 ==========================================================*/
 .sidebar {
