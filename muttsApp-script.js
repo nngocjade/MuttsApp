@@ -104,6 +104,41 @@ function createMessagePreviewBox(chatObj) {
   MessagePreviewWrapper.appendChild(MessagePreviewBox);
 }
 
+//--------------------   CREATE CONTACT PREVIEW BOX   --------------------//
+
+function createContactPreviewBox() {
+  let contactPreviewBox = document.createElement("div");
+  contactPreviewBox.classList.add("contact-preview-box");
+
+  let imgWrap = document.createElement("div");
+  imgWrap.classList.add("img-wrap");
+  let image = document.createElement("img");
+  image.setAttribute("src", "./images/icons8-pikachu-pokemon-50.png");
+  image.setAttribute("alt", "default icon");
+
+  imgWrap.appendChild(image);
+
+  let textWrap = document.createElement("div");
+  textWrap.classList.add("contact-text-wrap");
+  let nameParagraph = document.createElement("p");
+  nameParagraph.innerText = "contact - user's - name";
+  let messageParagraph = document.createElement("p");
+  messageParagraph.innerText = "contact - last message";
+
+  textWrap.appendChild(nameParagraph);
+  textWrap.appendChild(messageParagraph);
+
+  contactPreviewBox.appendChild(imgWrap);
+  contactPreviewBox.appendChild(textWrap);
+
+  let contactPreviewWrapper = document.getElementById(
+    "contact-preview-wrapper"
+  );
+  contactPreviewWrapper.appendChild(contactPreviewBox);
+}
+
+createContactPreviewBox();
+
 //--------------------   CREATE PREVIEW BOXE(S)  --------------------//
 
 function createPreviewBoxes(dataObj) {
@@ -149,25 +184,24 @@ window.addEventListener("click", outsideClick);
 //---Function to open modal
 function openModal() {
   modal.style.display = "block";
-  document.getElementById('header-main').style.opacity = 0.2
-  document.querySelector('.main-content').style.opacity = 0.2
-
+  document.getElementById("header-main").style.opacity = 0.2;
+  document.querySelector(".main-content").style.opacity = 0.2;
 }
 
 //---Function to close modal
 function closeModal() {
   modal.style.display = "none";
-  document.getElementById('header-main').style.opacity = 1
-  document.querySelector('.main-content').style.opacity = 1
+  document.getElementById("header-main").style.opacity = 1;
+  document.querySelector(".main-content").style.opacity = 1;
 }
 
 //Function to close modal if outside click
 function outsideClick(event) {
-  if (event.target == modal){
+  if (event.target == modal) {
     modal.style.display = "none";
-    document.getElementById('header-main').style.opacity = 1
-    document.querySelector('.main-content').style.opacity = 1
-  } 
+    document.getElementById("header-main").style.opacity = 1;
+    document.querySelector(".main-content").style.opacity = 1;
+  }
 }
 
 //--------------------   ADD EVENT(SUBMIT) LISTENER    --------------------//
