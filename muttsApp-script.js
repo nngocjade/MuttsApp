@@ -206,6 +206,15 @@ function outsideClick(event) {
 
 // ------------------ON CLICK DROP DOWN MENU------------------
 
+let dropDownButton = document.getElementById("dropdown-button")
+
+// ------click to open menu
+dropDownButton.addEventListener("click", function(event){
+  document.getElementById("dropdown-content").classList.toggle("show");
+});
+
+
+
 
 
 //--------------------   ADD EVENT(SUBMIT) LISTENER    --------------------//

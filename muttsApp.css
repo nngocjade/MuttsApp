@@ -118,6 +118,8 @@ header {
   border-radius: .3em;
   padding-top: .5em;
   padding-bottom: .5em;
+  display: none;
+  transition: ;
 }
 .dropdown-content > ul{
   display: flex;
@@ -135,6 +137,10 @@ header {
 
 .dropdown-item:hover{
   background-color: rgb(233, 231, 231);
+}
+
+.show{
+  display: block;
 }
 
 
