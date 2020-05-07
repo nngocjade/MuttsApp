@@ -30,6 +30,7 @@ header {
   width: 100vw;
   background-color: rgb(237, 237, 238);
   display: flex;
+  color: #656a6d;
 }
 
 /* === left side of the header ===*/
@@ -143,6 +144,7 @@ header {
 .sidebar {
   width: 30%;
   height: 100%;
+  color: #656a6d;
 }
 
 /* This is the wrap around the message */
