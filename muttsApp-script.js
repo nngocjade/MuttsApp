@@ -204,6 +204,10 @@ function outsideClick(event) {
   }
 }
 
+// ------------------ON CLICK DROP DOWN MENU------------------
+
+
+
 //--------------------   ADD EVENT(SUBMIT) LISTENER    --------------------//
 
 let newMessageForm = document.getElementById("send-message");
