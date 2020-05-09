@@ -204,7 +204,7 @@ function outsideClick(event) {
   }
 }
 
-// ------------------ON CLICK DROP DOWN MENU------------------
+// ------------------ON CLICK DROP DOWN MENU (SIDE BAR)------------------
 
 let dropDownButton = document.getElementById("dropdown-button");
 
@@ -212,8 +212,20 @@ let dropDownButton = document.getElementById("dropdown-button");
 dropDownButton.addEventListener("click", openDropdown);
 
 //--------function to open menu
-function openDropdown (event) {
+function openDropdown(event) {
   document.getElementById("dropdown-content").classList.toggle("show");
+}
+
+// ------------------ON CLICK DROP DOWN MENU (HEADER MAIN)------------------
+
+let dropDownButton2 = document.getElementById("dropdown-button-main");
+
+// ------click to open menu
+dropDownButton2.addEventListener("click", openDropdown2);
+
+//--------function to open menu
+function openDropdown2(event) {
+  document.getElementById("dropdown-content-main").classList.toggle("show");
 }
 
 // window.addEventListener("click", function (event) {
