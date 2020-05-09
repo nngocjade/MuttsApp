@@ -206,16 +206,28 @@ function outsideClick(event) {
 
 // ------------------ON CLICK DROP DOWN MENU------------------
 
-let dropDownButton = document.getElementById("dropdown-button")
+let dropDownButton = document.getElementById("dropdown-button");
 
 // ------click to open menu
-dropDownButton.addEventListener("click", function(event){
+dropDownButton.addEventListener("click", openDropdown);
+
+//--------function to open menu
+function openDropdown (event) {
   document.getElementById("dropdown-content").classList.toggle("show");
-});
+}
 
-
-
-
+// window.addEventListener("click", function (event) {
+//   if (!event.target.matches(".dropdown-button")) {
+//     var dropdowns = document.getElementsByClassName("dropdown-content");
+//     var i;
+//     for (i = 0; i < dropdowns.length; i++) {
+//       var openDropdown = dropdowns[i];
+//       if (openDropdown.classList.contains("show")) {
+//         openDropdown.classList.remove("show");
+//       }
+//     }
+//   }
+// });
 
 //--------------------   ADD EVENT(SUBMIT) LISTENER    --------------------//
 
