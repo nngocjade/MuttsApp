@@ -12,23 +12,8 @@
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     
-     let emojiButton = document.getElementById("emoji-button");
-      $(document).ready(function (e) {
-        $("#new-message").emojiPicker({
-          height: "300px",
-          width: "450px",
-          button: false,
-        });
-
-        $("#emoji-button").click(function (event) {
-          event.preventDefault();
-          $("#new-message").emojiPicker("toggle");
-        });
-      });
-      
-    </script>
 
   <link rel="stylesheet" type="text/css" href="css/jquery.emojipicker.css">
   <script type="text/javascript" src="js/jquery.emojipicker.js"></script>
@@ -36,9 +21,24 @@
   
   <link rel="stylesheet" type="text/css" href="css/jquery.emojipicker.g.css">
   <script type="text/javascript" src="js/jquery.emojis.js"></script>
-  -->
-
+  
   <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@3.0.3/dist/index.min.js"></script>
+
+  <script>
+
+    $(document).ready(function (e) {
+      $("#new-message").emojiPicker({
+        height: "300px",
+        width: "450px",
+        button: false,
+      });
+
+      $("#emoji-button").click(function (event) {
+        event.preventDefault();
+        $("#new-message").emojiPicker("toggle");
+      });
+    });
+  </script>
   
   </head>
   <body>
