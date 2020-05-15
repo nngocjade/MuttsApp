@@ -407,6 +407,7 @@ button:hover > svg > path {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
+  position: relative;
 }
 
 .static-search-icon {
