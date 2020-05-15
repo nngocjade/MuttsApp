@@ -367,3 +367,27 @@ function newUser() {
 //   console.log(newChatUserId)
 //   // Write submit fetch here
 // }
+
+window.addEventListener("DOMContentLoaded", () => {
+  02;
+  const button = document.querySelector("#emoji-button");
+  03;
+  const picker = new EmojiButton();
+  04;
+
+  05;
+  picker.on("emoji", (emoji) => {
+    06;
+    document.querySelector("#new-message").value += emoji;
+    07;
+  });
+  08;
+
+  09;
+  button.addEventListener("click", () => {
+    10;
+    picker.pickerVisible ? picker.hidePicker() : picker.showPicker(button);
+    11;
+  });
+  12;
+});
