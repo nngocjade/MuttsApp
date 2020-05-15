@@ -37,7 +37,7 @@
    * 'iconSize' added by Andre Staltz.
    */
   $.emojiarea = {
-    assetsPath : '',
+    assetsPath : './images',
     spriteSheetPath: '',
     blankGifPath: '',
     iconSize : 25,
@@ -114,11 +114,14 @@
   util.replaceSelection = (function() {
     if (window.getSelection) {
       return function(content) {
+        console.log(typeof content)
         var range, sel = window.getSelection();
+        console.log(sel)
         var node = typeof content === 'string' ? document
             .createTextNode(content) : content;
         if (sel.getRangeAt && sel.rangeCount) {
           range = sel.getRangeAt(0);
+          console.log(range)
           range.deleteContents();
           //range.insertNode(document.createTextNode(''));
           range.insertNode(node);
@@ -146,6 +149,7 @@
   })();
 
   util.insertAtCursor = function(text, el) {
+    console.log("hi")
     text = ' ' + text;
     var val = el.value, endIndex, startIndex, range;
     if (typeof el.selectionStart != 'undefined'
@@ -236,10 +240,12 @@
 
   EmojiArea.prototype.setupButton = function() {
     var self = this;
-    var $button = $('[data-id=' + this.id + '][data-type=picker]');
-
+    var $button = $('#emoji-menu');
+    
     $button.on('click', function(e) {
-      self.emojiMenu.show(self);
+      if(this.dataset.chat_selected === "true"){
+        self.emojiMenu.show(self);
+      }
     });
 
     this.$button = $button;
@@ -377,6 +383,7 @@
 
     var editorDiv = this.$editor;
     this.$editor.on("change keydown keyup resize scroll", function(e) {
+      
       if(MAX_LENGTH_ALLOWED_KEYS.indexOf(e.which) == -1 &&
         !((e.ctrlKey || e.metaKey) && e.which == 65) && // Ctrl + A
         !((e.ctrlKey || e.metaKey) && e.which == 67) && // Ctrl + C
@@ -414,16 +421,16 @@
       editorDiv.scrollTop(editorDiv[0].scrollHeight);
     });
 
-    $textarea.after("<i class='emoji-picker-icon emoji-picker " + this.options.popupButtonClasses + "' data-id='" + id + "' data-type='picker'></i>");
+    // $textarea.after("<i class='emoji-picker-icon emoji-picker " + this.options.popupButtonClasses + "' data-id='" + id + "' data-type='picker'></i>");
 
-    $textarea.hide().after(this.$editor);
+    $textarea.after(this.$editor);
     this.setup();
 
     /*
      * MODIFICATION: Following line was modified by Igor Zhukov, in order to
      * improve emoji insert behaviour
      */
-    $(document.body).on('mousedown', function() {
+    $(document.body).on('mousedown', function(e) {
       if (self.hasFocus) {
         self.selection = util.saveSelection();
       }
@@ -458,6 +465,7 @@
      */
     var insertionContent = '';
     if (this.options.inputMethod == 'unicode') {
+      console.log(this.emojiPopup.colonToUnicode)
       insertionContent = this.emojiPopup.colonToUnicode(emoji);
     } else {
       var $img = $(EmojiArea.createIcon($.emojiarea.icons[emoji]));
@@ -468,23 +476,26 @@
       }
       insertionContent = $img[0];
     }
+    
+    $('#new-message').val($('#new-message').val() + insertionContent)
+    $('#new-message').trigger('focus');
 
-    this.$editor.trigger('focus');
-    if (this.selection) {
-      util.restoreSelection(this.selection);
-    }
-    try {
-      util.replaceSelection(insertionContent);
-    } catch (e) {
-    }
+    // this.$editor.trigger('focus');
+    // if (this.selection) {
+    //   util.restoreSelection(this.selection);
+    // }
+    // try {
+    //   util.replaceSelection(insertionContent);
+    // } catch (e) {
+    // }
 
     /*
      * MODIFICATION: Following line was added by Igor Zhukov, in order to
      * save recent emojis
      */
-    util.emojiInserted(emoji, this.menu);
+    // util.emojiInserted(emoji, this.menu);
 
-    this.onChange();
+    // this.onChange();
   };
 
   EmojiArea_WYSIWYG.prototype.val = function() {
@@ -634,7 +645,7 @@
     });
 
     this.$menu.on('click', 'a', function(e) {
-
+      console.log(this)
       self.emojiarea.updateBodyPadding(self.emojiarea.$editor);
       if ($(this).hasClass('emoji-menu-tab')) {
         if (self.getTabIndex(this) !== self.currentCategory) {
