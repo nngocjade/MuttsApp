@@ -126,6 +126,7 @@ img.emoji {
 .emoji-menu {
     position: absolute;
     right: 0;
+    top: -245px;
     z-index: 999;
     width: 225px;
     overflow: hidden;
