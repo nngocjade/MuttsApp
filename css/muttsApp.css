@@ -152,7 +152,7 @@ header {
   height: 40px;
   /* background-color: white; */
   border-radius: 40px;
-  transition: all 3.2s linear;
+  transition: all .2s linear;
 }
 
 .expand-search-header-form:hover {
@@ -160,7 +160,7 @@ header {
 }
 
 .expand-search-header-form:hover {
-  background: white
+  background: white;
 }
 
 .expand-search-header-form:hover > #expand-search-input {
@@ -171,12 +171,12 @@ header {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: inherit;
+  background-color: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
   color: rgb(165, 165, 165);
-  transition: all 3.2s linear;
+  transition: all .2s linear;
 }
 
 .expand-search-header-form:hover .expand-search-button.fa.fa-search {
@@ -184,9 +184,9 @@ header {
 }
 
 #expand-search-input {
-  transition: all 3.2s linear;
+  transition: all .2s linear;
   width: 0;
-  background-color: inherit
+  background-color: transparent
 }
 
 /* ========================================================
@@ -458,7 +458,7 @@ input[name="search"] {
 
 .main-chat:after {
   content: " ";
-  background-image: url("/images/pokeball-clipart-black-and-white-186526-9437009.svg");
+  background-image: url("../images/pokeball-clipart-black-and-white-186526-9437009.svg");
   background-size: 25px;
   position: absolute;
   opacity: 0.4;

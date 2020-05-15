@@ -154,6 +154,9 @@ function previewBoxClick(event) {
   let chatID = event.target.dataset.chat_id;
   let senderID = event.target.dataset.sender_id;
 
+  // Boolean to allow emoji button to be clicked
+  document.querySelector('#emoji-menu').dataset.chat_selected = true;
+
   document.getElementById("send-message").dataset.chat_id = chatID; //getting message form data attribute and setting to chatID
 
   fetch(`${baseUrl}/users/${userId}/chats/${senderID}`)
