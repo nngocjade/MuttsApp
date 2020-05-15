@@ -150,12 +150,17 @@ header {
 
 .expand-search-header-form {
   height: 40px;
-  background-color: white;
+  /* background-color: white; */
   border-radius: 40px;
+  transition: all 3.2s linear;
 }
 
 .expand-search-header-form:hover {
   padding-left: 10px;
+}
+
+.expand-search-header-form:hover {
+  background: white
 }
 
 .expand-search-header-form:hover > #expand-search-input {
@@ -166,21 +171,22 @@ header {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: white;
+  background-color: inherit;
   display: flex;
   justify-content: center;
   align-items: center;
   color: rgb(165, 165, 165);
+  transition: all 3.2s linear;
 }
 
-.expand-search-button.fa.fa-search:hover {
+.expand-search-header-form:hover .expand-search-button.fa.fa-search {
   color: rgb(112, 112, 112);
 }
 
 #expand-search-input {
-  transition: 0.2s;
+  transition: all 3.2s linear;
   width: 0;
-  background-color: white;
+  background-color: inherit
 }
 
 /* ========================================================
@@ -254,7 +260,7 @@ header {
   border-radius: 50%;
   box-shadow: 2px 2px 2px rgb(206, 205, 205);
   padding: 4px;
-  background-image: url("/images/icons8-pokeball-50-50percent.png");
+  background-image: url("../images/icons8-pokeball-50-50percent.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 145%;
