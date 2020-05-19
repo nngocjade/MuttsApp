@@ -332,6 +332,11 @@ button:hover > svg > path {
   fill: #ccc;
 }
 
+.emoji-picker{
+  top: -60px !important;
+  left: -45px !important;
+}
+
 /* ========================================================
               MODAL SLIDING WINDOW 
 ==========================================================*/

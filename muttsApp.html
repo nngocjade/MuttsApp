@@ -12,41 +12,10 @@
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <!-- EMOJI PICKER
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  
-  <link rel="stylesheet" type="text/css" href="css/jquery.emojipicker.css">
-  <script type="text/javascript" src="js/jquery.emojipicker.js"></script>
-  
-  
-  <link rel="stylesheet" type="text/css" href="css/jquery.emojipicker.g.css">
-  <script type="text/javascript" src="js/jquery.emojis.js"></script>
-  
-  <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@3.0.3/dist/index.min.js"></script>
 
-  <script>
-    $(document).ready(function (e) {
-      $("#new-message").emojiPicker({
-        height: "300px",
-        width: "450px",
-        button: false,
-        position: top 
-      });
-
-      $("#emoji-button").click(function (event) {
-        event.preventDefault();
-        $("#new-message").emojiPicker("toggle");
-      });
-    });
-  </script> -->
-  <!-- End of Emoji Picker -->
-
-  <!-- OTHER EMOJI PICKER -->
-  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" />
-  <link href="css/emoji.css" rel="stylesheet" /> -->
-  <!-- End of Other Emoji Picker -->
-
-  <script src="https://cdn.jsdelivr.net/npm/emoji-button@latest/dist/index.min.js"></script>
+    <!-- Emoji button source -->
+    <!-- https://www.cssscript.com/emoji-picker-button/ -->
+    <script src="https://cdn.jsdelivr.net/npm/emoji-button@latest/dist/index.min.js"></script>
 
   </head>
   <body>
@@ -313,26 +282,6 @@
         </button>
       </div>
     </div>
-          <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-          <script src="js/config.js"></script>
-          <script src="js/util.js"></script>
-          <script src="js/jquery.emojiarea.js"></script>
-          <script src="js/emoji-picker.js"></script>
-          
-          <script>
-            $(function () {
-              // Initializes and creates emoji set from sprite sheet
-              window.emojiPicker = new EmojiPicker({
-                emojiable_selector: '[data-emojiable=true]',
-                assetsPath: '/images',
-                popupButtonClasses: 'fa fa-smile-o'
-              });
-              // Finds all elements with `emojiable_selector` and converts them to rich emoji input fields
-              // You may want to delay this step if you have dynamically created input fields that appear later in the loading process
-              // It can be called as many times as necessary; previously converted input fields will not be converted again
-              window.emojiPicker.discover();
-            });
-          </script> -->
           <script src="js/muttsApp-script.js"></script>
   </body>
 </html>
