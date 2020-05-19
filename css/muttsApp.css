@@ -332,9 +332,37 @@ button:hover > svg > path {
   fill: #ccc;
 }
 
-.emoji-picker{
+/* ========================================================
+              EMOJI PLUGGIN OVERRIDE STYLES
+==========================================================*/
+
+.emoji-picker {
   top: -60px !important;
   left: -45px !important;
+  height: 20em !important;
+  padding-bottom: 0.4em !important;
+}
+.emoji-picker__content {
+  height: 14em !important;
+}
+.emoji-picker__emojis {
+  height: 13.5em !important;
+  overflow-y: scroll !important;
+}
+.emoji-picker__preview {
+  display: none !important;
+}
+li.emoji-picker__tab > svg > path {
+  fill: gray !important;
+}
+
+li.emoji-picker__tab:hover > svg > path {
+  fill: rgb(63, 63, 63) !important;
+}
+
+.emoji-picker__search {
+  padding-left: 5px !important;
+  outline: none !important;
 }
 
 /* ========================================================

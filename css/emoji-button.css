@@ -118,7 +118,6 @@
   font-family: Arial, Helvetica, sans-serif;
   overflow: hidden;
   animation: show var(--animation-duration) var(--animation-easing);
-
 }
 
 .emoji-picker.hiding {
