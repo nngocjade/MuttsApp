@@ -340,7 +340,9 @@ button:hover > svg > path {
   top: -60px !important;
   left: -45px !important;
   height: 20em !important;
-  padding-bottom: 0.4em !important;
+  padding-bottom: 0.45em !important;
+  border: 1px solid rgb(224, 224, 224) !important;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 .emoji-picker__content {
   height: 14em !important;
