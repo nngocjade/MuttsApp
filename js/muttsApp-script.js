@@ -199,9 +199,14 @@ let modal = document.getElementById("popup-modal-window");
 
 //---get open modal button
 let modalButton = document.getElementById("modal-button");
+//--open icon profile modal button
+let iconProfileModalButton = document.getElementById(
+  "icon-profile-modal-button"
+);
+//---open new group modal button
+let newGroupModalButton = document.getElementById("newgroup-modal-button");
 // ---open profile modal button
 let profileModalButton = document.getElementById("profile-modal-button");
-
 // ---open setting modal button
 let settingModalButton = document.getElementById("setting-modal-button");
 
@@ -210,8 +215,10 @@ let closeButton = document.getElementsByClassName("close-button")[0];
 
 //---listen for OPEN click
 modalButton.addEventListener("click", openModal);
+newGroupModalButton.addEventListener("click", openModal);
 profileModalButton.addEventListener("click", openModal);
 settingModalButton.addEventListener("click", openModal);
+iconProfileModalButton.addEventListener("click", openModal);
 
 //---listen for CLOSE click
 closeButton.addEventListener("click", closeModal);
