@@ -242,22 +242,32 @@ function outsideClick(event) {
 
 let dropDownButton = document.getElementById("dropdown-button");
 
+let dropdownContent = document.getElementById("dropdown-content-id");
+
 // ------click to open menu
 dropDownButton.addEventListener("click", openDropdown);
 
 //--------function to open menu
 function openDropdown(event) {
-  document.getElementById("dropdown-content").classList.toggle("show");
+  document.getElementById("dropdown-content-id").classList.toggle("show");
 }
 
-// //---Listen for OUTSIDE click
-// window.addEventListener("click", outsideClickButton);
+//---Listen for OUTSIDE click
+//---this works for both sidebar and header main dropdown menu
+window.addEventListener("click", outsideClickButton);
 
-// function outsideClickButton(e){
-//   if(event.target == document.querySelector("body")){
-//     dropDownButton.style.display = "none";
-//   }
-// }
+function outsideClickButton(e) {
+  if (!e.target.matches(".dropdown-button")) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdownOne = dropdowns[i];
+      if (openDropdownOne.classList.contains("show")) {
+        openDropdownOne.classList.remove("show");
+      }
+    }
+  }
+}
 
 // ------------------ON CLICK DROP DOWN MENU (HEADER MAIN)------------------
 
