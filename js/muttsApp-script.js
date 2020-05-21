@@ -181,21 +181,16 @@ function createModalWindow() {
   modalHeader.appendChild(closeButton);
 
   let closeButton = document.createElement("button");
-  closeButton.innerHTML = '<i class="close - button fa fa - angle - left" ></i>';
+  closeButton.innerHTML =
+    '<i class="close - button fa fa - angle - left" ></i>';
 
-  modalHeader.innerHTML = '<h2>Select contact</h2>';
+  modalHeader.innerHTML = "<h2>Select contact</h2>";
 
   modalHeader.appendChild(modalHeaderIcon);
 
   let modalHeaderIcon = document.createElement("div");
   modalHeaderIcon.setAttribute("id", "modal-header-icon");
-  
-
-
-
 }
-
-
 
 //---------------------GET MODAL ELEMENT------------------------
 
@@ -204,12 +199,15 @@ let modal = document.getElementById("popup-modal-window");
 
 //---get open modal button
 let modalButton = document.getElementById("modal-button");
+// ---open profile modal button
+let profileModalButton = document.getElementById("profile-modal-button");
 
 //---get close button
 let closeButton = document.getElementsByClassName("close-button")[0];
 
 //---listen for OPEN click
 modalButton.addEventListener("click", openModal);
+profileModalButton.addEventListener("click", openModal);
 
 //---listen for CLOSE click
 closeButton.addEventListener("click", closeModal);
@@ -390,5 +388,3 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 // --------------------- PROFILE SLIDE OUT BAR ---------------------
-
-
