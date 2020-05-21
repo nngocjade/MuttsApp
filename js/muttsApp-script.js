@@ -163,34 +163,34 @@ function previewBoxClick(event) {
 
 // ------------------- CREATE MODAL SLIDING WINDOW ------------------------
 
-function createModalWindow() {
-  let popUpModalWindow = document.createElement("div");
-  popUpModalWindow.classList.add("popup-modal-window");
-  popUpModalWindow.setAttribute("id", "popup-modal-window");
+// function createModalWindow() {
+//   let popUpModalWindow = document.createElement("div");
+//   popUpModalWindow.classList.add("popup-modal-window");
+//   popUpModalWindow.setAttribute("id", "popup-modal-window");
 
-  popUpModalWindow.appendChild(modalBody);
+//   popUpModalWindow.appendChild(modalBody);
 
-  let modalBody = document.createElement("div");
-  modalBody.classList.add("modal-body");
+//   let modalBody = document.createElement("div");
+//   modalBody.classList.add("modal-body");
 
-  modalBody.appendChild(modalHeader);
+//   modalBody.appendChild(modalHeader);
 
-  let modalHeader = document.createElement("div");
-  modalHeader.classList.add("modal-header");
+//   let modalHeader = document.createElement("div");
+//   modalHeader.classList.add("modal-header");
 
-  modalHeader.appendChild(closeButton);
+//   modalHeader.appendChild(closeButton);
 
-  let closeButton = document.createElement("button");
-  closeButton.innerHTML =
-    '<i class="close - button fa fa - angle - left" ></i>';
+//   let closeButton = document.createElement("button");
+//   closeButton.innerHTML =
+//     '<i class="close - button fa fa - angle - left" ></i>';
 
-  modalHeader.innerHTML = "<h2>Select contact</h2>";
+//   modalHeader.innerHTML = "<h2>Select contact</h2>";
 
-  modalHeader.appendChild(modalHeaderIcon);
+//   modalHeader.appendChild(modalHeaderIcon);
 
-  let modalHeaderIcon = document.createElement("div");
-  modalHeaderIcon.setAttribute("id", "modal-header-icon");
-}
+//   let modalHeaderIcon = document.createElement("div");
+//   modalHeaderIcon.setAttribute("id", "modal-header-icon");
+// }
 
 //---------------------GET MODAL ELEMENT------------------------
 
@@ -202,12 +202,16 @@ let modalButton = document.getElementById("modal-button");
 // ---open profile modal button
 let profileModalButton = document.getElementById("profile-modal-button");
 
+// ---open setting modal button
+let settingModalButton = document.getElementById("setting-modal-button");
+
 //---get close button
 let closeButton = document.getElementsByClassName("close-button")[0];
 
 //---listen for OPEN click
 modalButton.addEventListener("click", openModal);
 profileModalButton.addEventListener("click", openModal);
+settingModalButton.addEventListener("click", openModal);
 
 //---listen for CLOSE click
 closeButton.addEventListener("click", closeModal);
