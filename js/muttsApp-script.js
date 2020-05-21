@@ -161,6 +161,42 @@ function previewBoxClick(event) {
     .then((dataObj) => createChatBubbles(dataObj));
 }
 
+// ------------------- CREATE MODAL SLIDING WINDOW ------------------------
+
+function createModalWindow() {
+  let popUpModalWindow = document.createElement("div");
+  popUpModalWindow.classList.add("popup-modal-window");
+  popUpModalWindow.setAttribute("id", "popup-modal-window");
+
+  popUpModalWindow.appendChild(modalBody);
+
+  let modalBody = document.createElement("div");
+  modalBody.classList.add("modal-body");
+
+  modalBody.appendChild(modalHeader);
+
+  let modalHeader = document.createElement("div");
+  modalHeader.classList.add("modal-header");
+
+  modalHeader.appendChild(closeButton);
+
+  let closeButton = document.createElement("button");
+  closeButton.innerHTML = '<i class="close - button fa fa - angle - left" ></i>';
+
+  modalHeader.innerHTML = '<h2>Select contact</h2>';
+
+  modalHeader.appendChild(modalHeaderIcon);
+
+  let modalHeaderIcon = document.createElement("div");
+  modalHeaderIcon.setAttribute("id", "modal-header-icon");
+  
+
+
+
+}
+
+
+
 //---------------------GET MODAL ELEMENT------------------------
 
 //---get modal element
@@ -337,6 +373,8 @@ function newUser() {
 //   // Write submit fetch here
 // }
 
+// ------------------ EMOJI PLUGGIN ---------------------------
+
 window.addEventListener("DOMContentLoaded", () => {
   const button = document.querySelector("#emoji-button");
 
@@ -351,71 +389,6 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// const picker = new EmojiButton({
-//   // position of the emoji picker. Available positions:
-//   // auto-start, auto-end, top, top-start, top-end, right, right-start, right-end, bottom, bottom-start, bottom-end, left, left-start, left-end
-//   position: auto - end,
+// --------------------- PROFILE SLIDE OUT BAR ---------------------
 
-//   // 1.0, 2.0, 3,0, 4.0, 5.0, 11.0, 12.0, 12.1
-//   emojiVersion: "12.1",
 
-//   // auto close the emoji picker after selection
-//   autoHide: true,
-
-//   // auto move focus to search field or not
-//   autoFocusSearch: true,
-
-//   // show the emoji preview
-//   showPreview: true,
-
-//   // show the emoji search input
-//   showSearch: true,
-
-//   // show recent emoji
-//   showRecents: true,
-
-//   // show skin tone variants
-//   showVariants: true,
-
-//   // or 'twemoji'
-//   style: "native",
-
-//   // 'light', 'drak', or 'auto'
-//   theme: "drak",
-
-//   // maximum number of recent emojis to save
-//   recentsCount: 50,
-
-//   // z-index property
-//   zIndex: 999,
-
-//   // an array of the categories to show
-//   categories: [
-//     "smileys",
-//     "people",
-//     "animals",
-//     "food",
-//     "activities",
-//     "travel",
-//     "objects",
-//     "symbols",
-//     "flags",
-//   ],
-
-//   // i18n
-//   i18n: {
-//     search: "Search",
-//     categories: {
-//       recents: "Recently Used",
-//       smileys: "Smileys & People",
-//       animals: "Animals & Nature",
-//       food: "Food & Drink",
-//       activities: "Activities",
-//       travel: "Travel & Places",
-//       objects: "Objects",
-//       symbols: "Symbols",
-//       flags: "Flags",
-//     },
-//     notFound: "No emojis found",
-//   },
-// });
