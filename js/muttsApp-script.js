@@ -218,7 +218,12 @@ modalButton.addEventListener("click", openModal);
 newGroupModalButton.addEventListener("click", openModal);
 profileModalButton.addEventListener("click", openModal);
 settingModalButton.addEventListener("click", openModal);
-iconProfileModalButton.addEventListener("click", openModal);
+iconProfileModalButton.addEventListener("click", openProfileModal);
+
+function openProfileModal() {
+  // write content settings
+  openModal();
+}
 
 //---listen for CLOSE click
 closeButton.addEventListener("click", closeModal);
@@ -260,7 +265,10 @@ dropDownButton.addEventListener("click", openDropdown);
 
 //--------function to open menu
 function openDropdown(event) {
+  let el = document.getElementById("dropdown-content-id");
+  console.log(el.classList);
   document.getElementById("dropdown-content-id").classList.toggle("show");
+  console.log(el.classList);
 }
 
 //---Listen for OUTSIDE click
@@ -268,7 +276,8 @@ function openDropdown(event) {
 window.addEventListener("click", outsideClickButton);
 
 function outsideClickButton(e) {
-  if (!e.target.matches(".dropdown-button")) {
+  console.log(e.target.closest(".dropdown-button"));
+  if (!e.target.closest(".dropdown-button")) {
     var dropdowns = document.getElementsByClassName("dropdown-content");
     var i;
     for (i = 0; i < dropdowns.length; i++) {
