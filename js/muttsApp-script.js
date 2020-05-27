@@ -221,12 +221,11 @@ settingModalButton.addEventListener("click", openModal);
 iconProfileModalButton.addEventListener("click", openProfileModal);
 
 function openNewChatModal() {
-  openModal();
+  let modalHeader = document.getElementById("modal-header-id");
 
-  let modalHeader = document.getElementsByClassName("modal-header");
-
-  let hTwoInnerText = document.getElementsByTagName("h2");
-  hTwoInnerText.innerHTML = "Contact";
+  //need to grab elementbyid in order to set innerHTML
+  let hTwoInnerText = document.getElementById("hTwo-Inner-Text");
+  hTwoInnerText.innerHTML = "Select Contact";
 
   modalHeader.appendChild(hTwoInnerText);
 
@@ -237,17 +236,19 @@ function openNewChatModal() {
 
   let ul = document.createElement("ul");
 
-  modalHeaderIcon.appendChild("ul");
+  modalHeaderIcon.appendChild(ul);
 
   let li = document.createElement("li");
 
-  ul.appendChild("li");
+  ul.appendChild(li);
 
   let button = document.createElement("button");
 
   li.appendChild(button);
 
-  button.innerHTML = '<i class="close - button 	fa fa - user - plus"></i>';
+  button.innerHTML = '<i class="close-button 	fa fa-user-plus"></i>';
+
+  openModal();
 }
 
 function openProfileModal() {
