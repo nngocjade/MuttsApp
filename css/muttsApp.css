@@ -455,16 +455,25 @@ input[name="search"] {
   width: 60px;
   height: 60px;
   bottom: 40px;
-  background-color: #0c9;
+  background-color: rgb(75, 218, 182);
   color: #fff;
   border-radius: 50px;
   text-align: center;
   box-shadow: 2px 2px 3px #999;
+  transition: all 1s;
 }
 
-.float-angle-icon{
-  width: ;
+.float > i{
+  transition: all 1s;
   margin-top: 22px;
+}
+
+.float:hover{
+   transform: scale(1.2);
+}
+
+.float:hover > i{
+  transform: scale(1.5);
 }
 
 
