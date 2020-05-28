@@ -216,19 +216,16 @@ let closeButton = document.getElementsByClassName("close-button")[0];
 //---listen for OPEN click
 newChatModalButton.addEventListener("click", openNewChatModal);
 newGroupModalButton.addEventListener("click", openNewGroupModal);
-profileModalButton.addEventListener("click", openModal);
-settingModalButton.addEventListener("click", openModal);
-iconProfileModalButton.addEventListener("click", openProfileModal);
+profileModalButton.addEventListener("click", openProfileModal);
+settingModalButton.addEventListener("click", openSettingsModal);
+iconProfileModalButton.addEventListener("click", openIconProfileModal);
 
 function openNewChatModal() {
-  let modalHeader = document.getElementById("modal-header-id");
-
   //need to grab elementbyid in order to set innerHTML
   let hTwoInnerText = document.getElementById("hTwo-Inner-Text");
   hTwoInnerText.innerHTML = "Select Contact";
 
   let modalHeaderIcon = document.getElementById("modal-header-icon");
-
   modalHeaderIcon.innerHTML = "";
 
   let ul = document.createElement("ul");
@@ -238,13 +235,10 @@ function openNewChatModal() {
   let button = document.createElement("button");
   li.appendChild(button);
   button.innerHTML = '<i class="close-button 	fa fa-user-plus"></i>';
-
   openModal();
 }
 
 function openNewGroupModal() {
-  let modalHeader = document.getElementById("modal-header-id");
-
   //need to grab elementbyid in order to set innerHTML
   let hTwoInnerText = document.getElementById("hTwo-Inner-Text");
   hTwoInnerText.innerHTML = "New Group";
@@ -256,7 +250,32 @@ function openNewGroupModal() {
 }
 
 function openProfileModal() {
-  // write content settings
+  let hTwoInnerText = document.getElementById("hTwo-Inner-Text");
+  hTwoInnerText.innerHTML = "Profile";
+
+  let modalHeaderIcon = document.getElementById("modal-header-icon");
+  modalHeaderIcon.innerHTML = "";
+
+  openModal();
+}
+
+function openSettingsModal() {
+  let hTwoInnerText = document.getElementById("hTwo-Inner-Text");
+  hTwoInnerText.innerHTML = "Settings";
+
+  let modalHeaderIcon = document.getElementById("modal-header-icon");
+  modalHeaderIcon.innerHTML = "";
+
+  openModal();
+}
+
+function openIconProfileModal() {
+  let hTwoInnerText = document.getElementById("hTwo-Inner-Text");
+  hTwoInnerText.innerHTML = "Profile";
+
+  let modalHeaderIcon = document.getElementById("modal-header-icon");
+  modalHeaderIcon.innerHTML = "";
+
   openModal();
 }
 
