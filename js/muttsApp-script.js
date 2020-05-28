@@ -161,36 +161,6 @@ function previewBoxClick(event) {
     .then((dataObj) => createChatBubbles(dataObj));
 }
 
-// ------------------- CREATE MODAL SLIDING WINDOW ------------------------
-
-// function createModalWindow() {
-//   let popUpModalWindow = document.createElement("div");
-//   popUpModalWindow.classList.add("popup-modal-window");
-//   popUpModalWindow.setAttribute("id", "popup-modal-window");
-
-//   popUpModalWindow.appendChild(modalBody);
-
-//   let modalBody = document.createElement("div");
-//   modalBody.classList.add("modal-body");
-
-//   modalBody.appendChild(modalHeader);
-
-//   let modalHeader = document.createElement("div");
-//   modalHeader.classList.add("modal-header");
-
-//   modalHeader.appendChild(closeButton);
-
-//   let closeButton = document.createElement("button");
-//   closeButton.innerHTML =
-//     '<i class="close - button fa fa - angle - left" ></i>';
-
-//   modalHeader.innerHTML = "<h2>Select contact</h2>";
-
-//   modalHeader.appendChild(modalHeaderIcon);
-
-//   let modalHeaderIcon = document.createElement("div");
-//   modalHeaderIcon.setAttribute("id", "modal-header-icon");
-// }
 
 //---------------------GET MODAL ELEMENT------------------------
 
@@ -228,13 +198,11 @@ function openNewChatModal() {
   let modalHeaderIcon = document.getElementById("modal-header-icon");
   modalHeaderIcon.innerHTML = "";
 
-  let ul = document.createElement("ul");
-  modalHeaderIcon.appendChild(ul);
-  let li = document.createElement("li");
-  ul.appendChild(li);
   let button = document.createElement("button");
-  li.appendChild(button);
   button.innerHTML = '<i class="close-button 	fa fa-user-plus"></i>';
+  
+  modalHeaderIcon.appendChild(button);
+
   openModal();
 }
 
@@ -415,45 +383,45 @@ function newUser() {
     .then((res) => console.log(res));
 }
 
-// function makeNewChatForm(e) {
-//   newChatModalBody.innerHTML = "Loading Chat Form";
-//   fetch(`${baseUrl}/users/`)
-//     .then(res => res.json())
-//     .then(data => {
-//       console.log(data);
-//       let usersArray = data.data;
-//       let frm = document.createElement('form');
-//       frm.id = `new-chat-frm`;
-//       let formString = ``;
-//       formString += `<input id="new-chat-user" type="text" list="users-list" class="form-control">`;
-//       formString += `<datalist id="users-list">`
-//       usersArray.forEach(userObj => {
-//         formString += `<option data-value="${userObj.id}" value="${userObj.first_name} ${userObj.last_name}"></option> `
-//       })
-//       formString += `</datalist>`
-//       formString += `<input type="submit" class="btn btn-success">`
-//       frm.innerHTML = formString;
-//       frm.addEventListener('submit', newChatSubmit)
-//       newChatModalBody.innerHTML = "";
-//       newChatModalBody.appendChild(frm);
-//     })
-// }
-// function newChatSubmit(e) {
-//   e.preventDefault()
-//   let options = document.getElementById('users-list').options;
-//   console.log(document.getElementById('users-list').options)
-//   console.log(e.target.elements)
-//   let val = e.target.elements["new-chat-user"].value
-//   console.log(val)
-//   let newChatUserId;
-//   Array.from(options).forEach(option => {
-//     if (option.value === val) {
-//       newChatUserId = option.getAttribute('data-value');
-//     }
-//   })
-//   console.log(newChatUserId)
-//   // Write submit fetch here
-// }
+function makeNewChatForm(e) {
+  newChatModalBody.innerHTML = "Loading Chat Form";
+  fetch(`${baseUrl}/users/`)
+    .then(res => res.json())
+    .then(data => {
+      console.log(data);
+      let usersArray = data.data;
+      let frm = document.createElement('form');
+      frm.id = `new-chat-frm`;
+      let formString = ``;
+      formString += `<input id="new-chat-user" type="text" list="users-list" class="form-control">`;
+      formString += `<datalist id="users-list">`
+      usersArray.forEach(userObj => {
+        formString += `<option data-value="${userObj.id}" value="${userObj.first_name} ${userObj.last_name}"></option> `
+      })
+      formString += `</datalist>`
+      formString += `<input type="submit" class="btn btn-success">`
+      frm.innerHTML = formString;
+      frm.addEventListener('submit', newChatSubmit)
+      newChatModalBody.innerHTML = "";
+      newChatModalBody.appendChild(frm);
+    })
+}
+function newChatSubmit(e) {
+  e.preventDefault()
+  let options = document.getElementById('users-list').options;
+  console.log(document.getElementById('users-list').options)
+  console.log(e.target.elements)
+  let val = e.target.elements["new-chat-user"].value
+  console.log(val)
+  let newChatUserId;
+  Array.from(options).forEach(option => {
+    if (option.value === val) {
+      newChatUserId = option.getAttribute('data-value');
+    }
+  })
+  console.log(newChatUserId)
+  // Write submit fetch here
+}
 
 // ------------------ EMOJI PLUGGIN ---------------------------
 

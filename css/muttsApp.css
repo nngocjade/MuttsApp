@@ -450,6 +450,25 @@ input[name="search"] {
   outline: none; /* === this gets rid of the blue outline ===*/
 }
 
+.float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  background-color: #0c9;
+  color: #fff;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 2px 2px 3px #999;
+}
+
+.float-angle-icon{
+  width: ;
+  margin-top: 22px;
+}
+
+
+
 /* ------------------CONTACT SECTION------------------ */
 
 .contact-preview-wrap {
@@ -581,16 +600,3 @@ input[name="message"] {
   width: 90%;
   outline: none; /* === this gets rid of the blue outline ===*/
 }
-
-/* apply properties that you want changed */
-/* @media (max-width: 905px) {
-  .img-wrap {
-    width: 40%;
-  }
-  .message-preview-box {
-    height: 100px;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-  }
-} */
