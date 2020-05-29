@@ -455,28 +455,27 @@ input[name="search"] {
   width: 60px;
   height: 60px;
   bottom: 40px;
-  background-color: rgb(75, 218, 182);
+  background-color: rgb(67, 196, 163);
   color: #fff;
   border-radius: 50px;
   text-align: center;
   box-shadow: 2px 2px 3px #999;
-  transition: all 1s;
+  transition: all 0.5s;
 }
 
-.float > i{
-  transition: all 1s;
+.float > i {
+  transition: all 0.5s;
   margin-top: 22px;
 }
 
-.float:hover{
-   transform: scale(1.2);
+.float:hover {
+  transform: scale(1.1);
+  background-color: rgb(75, 218, 182);
 }
 
-.float:hover > i{
-  transform: scale(1.5);
+.float:hover > i {
+  transform: scale(1.2);
 }
-
-
 
 /* ------------------CONTACT SECTION------------------ */
 
