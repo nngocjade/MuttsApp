@@ -209,7 +209,7 @@ function openNewChatModal() {
 function openNewGroupModal() {
   //need to grab elementbyid in order to set innerHTML
   let hTwoInnerText = document.getElementById("hTwo-Inner-Text");
-  hTwoInnerText.innerHTML = "New Group";
+  hTwoInnerText.innerHTML = "Add group participants";
 
   let modalHeaderIcon = document.getElementById("modal-header-icon");
   modalHeaderIcon.innerHTML = "";
