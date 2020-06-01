@@ -217,8 +217,14 @@ function createContactPreviewBox() {
 }
 
 // --------------CREATE FLOATING SEND BUTTON----------
-function createFloatingSendButton(){
-  
+function createFloatingSendButton() {
+  let floatButton = document.createElement("div");
+  floatButton.classList.add("float-button");
+  floatButton.setAttribute("id", "float-button-id");
+  floatButton.innerHTML = '<i class="float-angle-icon fa fa-arrow-right"></i>';
+
+  let modalContent = document.getElementById("modal-content-id");
+  modalContent.append(floatButton);
 }
 
 function openNewChatModal() {
