@@ -161,7 +161,6 @@ function previewBoxClick(event) {
     .then((dataObj) => createChatBubbles(dataObj));
 }
 
-
 //---------------------GET MODAL ELEMENT------------------------
 
 //---get modal element
@@ -190,6 +189,16 @@ profileModalButton.addEventListener("click", openProfileModal);
 settingModalButton.addEventListener("click", openSettingsModal);
 iconProfileModalButton.addEventListener("click", openIconProfileModal);
 
+function createSearchBox() {
+  let searchFormWrap = document.createElement("div");
+  searchFormWrap.classList.add("search form-wrap");
+
+  let searchForm = document.createElement("form");
+  searchForm.setAttribute("id", "search-contact-form");
+
+  searchFormWrap.appendChild(searchForm);
+}
+
 function openNewChatModal() {
   //need to grab elementbyid in order to set innerHTML
   let hTwoInnerText = document.getElementById("hTwo-Inner-Text");
@@ -200,8 +209,10 @@ function openNewChatModal() {
 
   let button = document.createElement("button");
   button.innerHTML = '<i class="close-button 	fa fa-user-plus"></i>';
-  
+
   modalHeaderIcon.appendChild(button);
+
+  createSearchBox();
 
   openModal();
 }
@@ -243,6 +254,9 @@ function openIconProfileModal() {
 
   let modalHeaderIcon = document.getElementById("modal-header-icon");
   modalHeaderIcon.innerHTML = "";
+
+  let modalContent = document.getElementsByClassName("modal-content");
+  modalContent.innerHTML = "";
 
   openModal();
 }
@@ -386,40 +400,40 @@ function newUser() {
 function makeNewChatForm(e) {
   newChatModalBody.innerHTML = "Loading Chat Form";
   fetch(`${baseUrl}/users/`)
-    .then(res => res.json())
-    .then(data => {
+    .then((res) => res.json())
+    .then((data) => {
       console.log(data);
       let usersArray = data.data;
-      let frm = document.createElement('form');
+      let frm = document.createElement("form");
       frm.id = `new-chat-frm`;
       let formString = ``;
       formString += `<input id="new-chat-user" type="text" list="users-list" class="form-control">`;
-      formString += `<datalist id="users-list">`
-      usersArray.forEach(userObj => {
-        formString += `<option data-value="${userObj.id}" value="${userObj.first_name} ${userObj.last_name}"></option> `
-      })
-      formString += `</datalist>`
-      formString += `<input type="submit" class="btn btn-success">`
+      formString += `<datalist id="users-list">`;
+      usersArray.forEach((userObj) => {
+        formString += `<option data-value="${userObj.id}" value="${userObj.first_name} ${userObj.last_name}"></option> `;
+      });
+      formString += `</datalist>`;
+      formString += `<input type="submit" class="btn btn-success">`;
       frm.innerHTML = formString;
-      frm.addEventListener('submit', newChatSubmit)
+      frm.addEventListener("submit", newChatSubmit);
       newChatModalBody.innerHTML = "";
       newChatModalBody.appendChild(frm);
-    })
+    });
 }
 function newChatSubmit(e) {
-  e.preventDefault()
-  let options = document.getElementById('users-list').options;
-  console.log(document.getElementById('users-list').options)
-  console.log(e.target.elements)
-  let val = e.target.elements["new-chat-user"].value
-  console.log(val)
+  e.preventDefault();
+  let options = document.getElementById("users-list").options;
+  console.log(document.getElementById("users-list").options);
+  console.log(e.target.elements);
+  let val = e.target.elements["new-chat-user"].value;
+  console.log(val);
   let newChatUserId;
-  Array.from(options).forEach(option => {
+  Array.from(options).forEach((option) => {
     if (option.value === val) {
-      newChatUserId = option.getAttribute('data-value');
+      newChatUserId = option.getAttribute("data-value");
     }
-  })
-  console.log(newChatUserId)
+  });
+  console.log(newChatUserId);
   // Write submit fetch here
 }
 
