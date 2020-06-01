@@ -190,12 +190,22 @@ settingModalButton.addEventListener("click", openSettingsModal);
 iconProfileModalButton.addEventListener("click", openIconProfileModal);
 
 function createSearchBox() {
-  let searchFormWrap = document.createElement("div");
-  searchFormWrap.classList.add("search form-wrap");
-
   let searchForm = document.createElement("form");
   searchForm.setAttribute("id", "search-contact-form");
+  searchForm.innerHTML =
+    '<i class="static - search - icon 	fa fa - search"></i>';
 
+  let searchInput = document.createElement("input");
+  searchInput.setAttribute("type", "text");
+  searchInput.setAttribute("name", "search");
+  searchInput.setAttribute("id", "search-contact-input");
+  searchInput.setAttribute("placeholder", "Search...");
+
+  searchForm.appendChild(searchInput);
+
+  searchForm.innerHTML = "";
+
+  let searchFormWrap = document.getElementById("search-form-wrap");
   searchFormWrap.appendChild(searchForm);
 }
 
