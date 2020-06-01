@@ -216,7 +216,7 @@ function createContactPreviewBox() {
   modalContent.appendChild(contactPreviewWrapper);
 }
 
-// --------------CREATE FLOATING SEND BUTTON----------
+// --------------CREATE FLOATING SEND BUTTON----------//
 function createFloatingSendButton() {
   let floatButton = document.createElement("div");
   floatButton.classList.add("float-button");
@@ -227,6 +227,7 @@ function createFloatingSendButton() {
   modalContent.append(floatButton);
 }
 
+//--------------OPEN NEW CHAT MODAL----------//
 function openNewChatModal() {
   let modalContent = document.getElementById("modal-content-id");
   modalContent.innerHTML = "";
@@ -279,16 +280,50 @@ function openSettingsModal() {
   openModal();
 }
 
+//-------------------CREATE EDIT PROFILE IMAGE------------------
+
+function createEditProfileImage() {
+  let imgWrap = document.createElement("div");
+  imgWrap.classList.add("img-wrap");
+  imgWrap.setAttribute("id", "edit-profile-img-id");
+  let image = document.createElement("img");
+  image.setAttribute("src", "./images/icons8-pikachu-pokemon-50.png");
+  image.setAttribute("alt", "default icon");
+
+  imgWrap.appendChild(image);
+
+  let modalContent = document.getElementById("modal-content-id");
+  modalContent.appendChild(imgWrap);
+}
+
+//---------------CREATE EDIT NAME-----------------
+
+function createEditName() {
+  let editNameWrap = document.createElement("div");
+  editNameWrap.classList.add("edit-name-wrap");
+  editNameWrap.setAttribute("edit-name-wrap-id");
+
+  let yourNameP = document.createElement("p");
+  yourNameP.setAttribute("id", "your-name-p-static");
+  yourNameP.innerHTML = "Your Poke Name";
+
+  let editNameForm = document.createElement("form");
+  editNameForm.classList.add("name-form-wrap");
+}
+
 function openIconProfileModal() {
+  let modalContent = document.getElementById("modal-content-id");
+  modalContent.innerHTML = "";
+
   let hTwoInnerText = document.getElementById("hTwo-Inner-Text");
   hTwoInnerText.innerHTML = "Profile";
 
   let modalHeaderIcon = document.getElementById("modal-header-icon");
   modalHeaderIcon.innerHTML = "";
 
-  let modalContent = document.getElementsByClassName("modal-content");
-  modalContent.innerHTML = "";
-
+  createEditProfileImage();
+  createEditName();
+  createEditAbout();
   openModal();
 }
 
