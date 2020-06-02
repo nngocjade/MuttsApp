@@ -302,7 +302,7 @@ function createEditProfileImage() {
 
 function createEditName() {
   let editNameWrap = document.createElement("div");
-  editNameWrap.classList.add("name-wrap");
+  editNameWrap.classList.add("div-wrap");
   editNameWrap.setAttribute("id", "edit-name-wrap-id");
 
   let yourNameP = document.createElement("p");
@@ -310,7 +310,7 @@ function createEditName() {
   yourNameP.innerHTML = "Your Poke Name";
 
   let editNameForm = document.createElement("form");
-  editNameForm.classList.add("name-form-wrap");
+  editNameForm.classList.add("form-wrap");
 
   editNameForm.innerHTML = '<i class="fas fa-pen"></i>';
 
@@ -326,7 +326,7 @@ function createEditName() {
   editNameWrap.appendChild(editNameForm);
 
   let staticTextWrap = document.createElement("div");
-  staticTextWrap.classList.add("name-wrap");
+  staticTextWrap.setAttribute("id","static-name-wrap-id");
 
   let staticTextP = document.createElement("p");
   staticTextP.setAttribute("id", "static-text-p");
@@ -340,7 +340,34 @@ function createEditName() {
   modalContent.appendChild(staticTextWrap);
 }
 
-function createEditAbout() {}
+function createEditAbout() {
+  let editAboutWrap = document.createElement("div");
+  editAboutWrap.classList.add("div-wrap");
+  editAboutWrap.setAttribute("id", "edit-about-wrap-id");
+
+  let aboutP = document.createElement("p");
+  aboutP.setAttribute("id", "your-about-p-static");
+  aboutP.innerHTML = "About";
+
+  let editAboutForm = document.createElement("form");
+  editAboutForm.classList.add("form-wrap");
+
+  editAboutForm.innerHTML = '<i class="fas fa-pen"></i>';
+
+  let editAboutInput = document.createElement("input");
+  editAboutInput.setAttribute("type", "text");
+  editAboutInput.setAttribute("name", "about");
+  editAboutInput.setAttribute("id", "about-input-id");
+  editAboutInput.setAttribute("placeholder", "about me...");
+
+  editAboutForm.appendChild(editAboutInput);
+
+  editAboutWrap.appendChild(aboutP);
+  editAboutWrap.appendChild(editAboutForm);
+
+  let modalContent = document.getElementById("modal-content-id");
+  modalContent.appendChild(editAboutWrap);
+}
 
 function openIconProfileModal() {
   let modalContent = document.getElementById("modal-content-id");
