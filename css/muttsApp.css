@@ -457,6 +457,33 @@ input[name="search"] {
   outline: none; /* === this gets rid of the blue outline ===*/
 }
 
+/* ------------EDIT ICON PROFILE MODAL------------ */
+
+.edit-profile-modal-content {
+  justify-content: flex-start;
+  padding-top: 3em;
+}
+
+.name-wrap {
+  height: 30%;
+  width: 100%;
+}
+
+.fas.fa-pen {
+  font-size: 36px;
+  color: #656a6d;
+  position: absolute;
+}
+#edit-profile-img-div {
+  width: 100%;
+  height: 40%;
+}
+
+#edit-profile-img {
+  height: 10em;
+  width: 10em;
+}
+
 /* ------------FLOATING SEND ICON-------------- */
 
 .float-button {

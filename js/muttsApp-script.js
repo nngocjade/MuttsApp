@@ -285,14 +285,16 @@ function openSettingsModal() {
 function createEditProfileImage() {
   let imgWrap = document.createElement("div");
   imgWrap.classList.add("img-wrap");
-  imgWrap.setAttribute("id", "edit-profile-img-id");
+  imgWrap.setAttribute("id", "edit-profile-img-div");
   let image = document.createElement("img");
   image.setAttribute("src", "./images/icons8-pikachu-pokemon-50.png");
   image.setAttribute("alt", "default icon");
+  image.setAttribute("id", "edit-profile-img");
 
   imgWrap.appendChild(image);
 
   let modalContent = document.getElementById("modal-content-id");
+  modalContent.classList.add("edit-profile-modal-content");
   modalContent.appendChild(imgWrap);
 }
 
@@ -310,11 +312,17 @@ function createEditName() {
   let editNameForm = document.createElement("form");
   editNameForm.classList.add("name-form-wrap");
 
-  let editIcon = document.createElement("div");
-  editIcon.innerHTML = '<i class="fas fa-pen"></i>';
+  editNameForm.innerHTML = '<i class="fas fa-pen"></i>';
+
+  let editNameInput = document.createElement("input");
+  editNameInput.setAttribute("type", "text");
+  editNameInput.setAttribute("name", "name");
+  editNameInput.setAttribute("id", "name-input-id");
+  editNameInput.setAttribute("placeholder", "Poke Name..");
+
+  editNameForm.appendChild(editNameInput);
 
   editNameWrap.appendChild(yourNameP);
-  editNameWrap.appendChild(editIcon);
   editNameWrap.appendChild(editNameForm);
 
   let staticTextWrap = document.createElement("div");
