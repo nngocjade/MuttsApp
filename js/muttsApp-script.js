@@ -301,7 +301,7 @@ function createEditProfileImage() {
 function createEditName() {
   let editNameWrap = document.createElement("div");
   editNameWrap.classList.add("edit-name-wrap");
-  editNameWrap.setAttribute("edit-name-wrap-id");
+  editNameWrap.setAttribute("id", "edit-name-wrap-id");
 
   let yourNameP = document.createElement("p");
   yourNameP.setAttribute("id", "your-name-p-static");
@@ -309,6 +309,16 @@ function createEditName() {
 
   let editNameForm = document.createElement("form");
   editNameForm.classList.add("name-form-wrap");
+
+  let editIcon = document.createElement("div");
+  editIcon.innerHTML = '<i class="fas fa-pen"></i>';
+
+  editNameWrap.appendChild(yourNameP);
+  editNameWrap.appendChild(editIcon);
+  editNameWrap.appendChild(editNameForm);
+
+  let modalContent = document.getElementById("modal-content-id");
+  modalContent.appendChild(editNameWrap);
 }
 
 function openIconProfileModal() {
@@ -323,7 +333,7 @@ function openIconProfileModal() {
 
   createEditProfileImage();
   createEditName();
-  createEditAbout();
+  // createEditAbout();
   openModal();
 }
 
