@@ -475,7 +475,7 @@ input[name="search"] {
   padding-right: 2em;
 }
 
-.form-wrap {
+.modal-form-wrap {
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;

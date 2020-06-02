@@ -310,7 +310,7 @@ function createEditName() {
   yourNameP.innerHTML = "Your Poke Name";
 
   let editNameForm = document.createElement("form");
-  editNameForm.classList.add("form-wrap");
+  editNameForm.classList.add("modal-form-wrap");
 
   editNameForm.innerHTML = '<i class="fas fa-pen"></i>';
 
@@ -326,7 +326,7 @@ function createEditName() {
   editNameWrap.appendChild(editNameForm);
 
   let staticTextWrap = document.createElement("div");
-  staticTextWrap.setAttribute("id","static-name-wrap-id");
+  staticTextWrap.setAttribute("id", "static-name-wrap-id");
 
   let staticTextP = document.createElement("p");
   staticTextP.setAttribute("id", "static-text-p");
@@ -350,7 +350,7 @@ function createEditAbout() {
   aboutP.innerHTML = "About";
 
   let editAboutForm = document.createElement("form");
-  editAboutForm.classList.add("form-wrap");
+  editAboutForm.classList.add("modal-form-wrap");
 
   editAboutForm.innerHTML = '<i class="fas fa-pen"></i>';
 
