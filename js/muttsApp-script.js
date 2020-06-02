@@ -300,7 +300,7 @@ function createEditProfileImage() {
 
 function createEditName() {
   let editNameWrap = document.createElement("div");
-  editNameWrap.classList.add("edit-name-wrap");
+  editNameWrap.classList.add("name-wrap");
   editNameWrap.setAttribute("id", "edit-name-wrap-id");
 
   let yourNameP = document.createElement("p");
@@ -317,9 +317,22 @@ function createEditName() {
   editNameWrap.appendChild(editIcon);
   editNameWrap.appendChild(editNameForm);
 
+  let staticTextWrap = document.createElement("div");
+  staticTextWrap.classList.add("name-wrap");
+
+  let staticTextP = document.createElement("p");
+  staticTextP.setAttribute("id", "static-text-p");
+  staticTextP.innerHTML =
+    "This is not your username or pin. This name will be visible to your PokeChat contacts.";
+
+  staticTextWrap.appendChild(staticTextP);
+
   let modalContent = document.getElementById("modal-content-id");
   modalContent.appendChild(editNameWrap);
+  modalContent.appendChild(staticTextWrap);
 }
+
+function createEditAbout() {}
 
 function openIconProfileModal() {
   let modalContent = document.getElementById("modal-content-id");
@@ -333,7 +346,7 @@ function openIconProfileModal() {
 
   createEditProfileImage();
   createEditName();
-  // createEditAbout();
+  createEditAbout();
   openModal();
 }
 
