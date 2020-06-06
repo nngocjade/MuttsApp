@@ -190,13 +190,23 @@ function openNewChatModal() {
 //-------------OPEN NEW GROUP MODAL ---------------
 
 function openNewGroupModal() {
+  let modalContent = document.getElementById("modal-content-id");
+  modalContent.innerHTML = "";
   //need to grab elementbyid in order to set innerHTML
   let hTwoInnerText = document.getElementById("hTwo-Inner-Text");
-  hTwoInnerText.innerHTML = "Add group participants";
+  hTwoInnerText.innerHTML = "Add group participant";
 
   let modalHeaderIcon = document.getElementById("modal-header-icon");
   modalHeaderIcon.innerHTML = "";
 
+  let button = document.createElement("button");
+  button.innerHTML = '<i class="close-button 	fa fa-user-plus"></i>';
+
+  modalHeaderIcon.appendChild(button);
+
+  createSearchBox();
+  createContactPreviewBox();
+  createFloatingSendButton();
   openModal();
 }
 
@@ -221,6 +231,9 @@ function openProfileModal() {
 //-------------OPEN SETTINGS MODAL ---------------
 
 function openSettingsModal() {
+  let modalContent = document.getElementById("modal-content-id");
+  modalContent.innerHTML = "";
+
   let hTwoInnerText = document.getElementById("hTwo-Inner-Text");
   hTwoInnerText.innerHTML = "Settings";
 
