@@ -154,6 +154,100 @@ profileModalButton.addEventListener("click", openProfileModal);
 settingModalButton.addEventListener("click", openSettingsModal);
 iconProfileModalButton.addEventListener("click", openIconProfileModal);
 
+// --------------CREATE FLOATING SEND BUTTON----------//
+function createFloatingSendButton() {
+  let floatButton = document.createElement("div");
+  floatButton.classList.add("float-button");
+  floatButton.setAttribute("id", "float-button-id");
+  floatButton.innerHTML = '<i class="float-angle-icon fa fa-arrow-right"></i>';
+
+  let modalContent = document.getElementById("modal-content-id");
+  modalContent.append(floatButton);
+}
+
+//--------------OPEN NEW CHAT MODAL----------//
+function openNewChatModal() {
+  let modalContent = document.getElementById("modal-content-id");
+  modalContent.innerHTML = "";
+  //need to grab elementbyid in order to set innerHTML
+  let hTwoInnerText = document.getElementById("hTwo-Inner-Text");
+  hTwoInnerText.innerHTML = "Select Contact";
+
+  let modalHeaderIcon = document.getElementById("modal-header-icon");
+  modalHeaderIcon.innerHTML = "";
+
+  let button = document.createElement("button");
+  button.innerHTML = '<i class="close-button 	fa fa-user-plus"></i>';
+
+  modalHeaderIcon.appendChild(button);
+
+  createSearchBox();
+  createContactPreviewBox();
+  createFloatingSendButton();
+  openModal();
+}
+
+//-------------OPEN NEW GROUP MODAL ---------------
+
+function openNewGroupModal() {
+  //need to grab elementbyid in order to set innerHTML
+  let hTwoInnerText = document.getElementById("hTwo-Inner-Text");
+  hTwoInnerText.innerHTML = "Add group participants";
+
+  let modalHeaderIcon = document.getElementById("modal-header-icon");
+  modalHeaderIcon.innerHTML = "";
+
+  openModal();
+}
+
+//-------------OPEN PROFILE MODAL ---------------
+
+function openProfileModal() {
+  let modalContent = document.getElementById("modal-content-id");
+  modalContent.innerHTML = "";
+
+  let hTwoInnerText = document.getElementById("hTwo-Inner-Text");
+  hTwoInnerText.innerHTML = "Profile";
+
+  let modalHeaderIcon = document.getElementById("modal-header-icon");
+  modalHeaderIcon.innerHTML = "";
+
+  createEditProfileImage();
+  createEditName();
+  createEditAbout();
+  openModal();
+}
+
+//-------------OPEN SETTINGS MODAL ---------------
+
+function openSettingsModal() {
+  let hTwoInnerText = document.getElementById("hTwo-Inner-Text");
+  hTwoInnerText.innerHTML = "Settings";
+
+  let modalHeaderIcon = document.getElementById("modal-header-icon");
+  modalHeaderIcon.innerHTML = "";
+
+  openModal();
+}
+
+//--------------OPEN ICON PROFILE MODAL -----------------
+
+function openIconProfileModal() {
+  let modalContent = document.getElementById("modal-content-id");
+  modalContent.innerHTML = "";
+
+  let hTwoInnerText = document.getElementById("hTwo-Inner-Text");
+  hTwoInnerText.innerHTML = "Profile";
+
+  let modalHeaderIcon = document.getElementById("modal-header-icon");
+  modalHeaderIcon.innerHTML = "";
+
+  createEditProfileImage();
+  createEditName();
+  createEditAbout();
+  openModal();
+}
+
 //------------CREATE SEARCH BOX---------------
 function createSearchBox() {
   let searchFormWrap = document.createElement("div");
@@ -216,71 +310,7 @@ function createContactPreviewBox() {
   modalContent.appendChild(contactPreviewWrapper);
 }
 
-// --------------CREATE FLOATING SEND BUTTON----------//
-function createFloatingSendButton() {
-  let floatButton = document.createElement("div");
-  floatButton.classList.add("float-button");
-  floatButton.setAttribute("id", "float-button-id");
-  floatButton.innerHTML = '<i class="float-angle-icon fa fa-arrow-right"></i>';
-
-  let modalContent = document.getElementById("modal-content-id");
-  modalContent.append(floatButton);
-}
-
-//--------------OPEN NEW CHAT MODAL----------//
-function openNewChatModal() {
-  let modalContent = document.getElementById("modal-content-id");
-  modalContent.innerHTML = "";
-  //need to grab elementbyid in order to set innerHTML
-  let hTwoInnerText = document.getElementById("hTwo-Inner-Text");
-  hTwoInnerText.innerHTML = "Select Contact";
-
-  let modalHeaderIcon = document.getElementById("modal-header-icon");
-  modalHeaderIcon.innerHTML = "";
-
-  let button = document.createElement("button");
-  button.innerHTML = '<i class="close-button 	fa fa-user-plus"></i>';
-
-  modalHeaderIcon.appendChild(button);
-
-  createSearchBox();
-  createContactPreviewBox();
-  createFloatingSendButton();
-  openModal();
-}
-
-function openNewGroupModal() {
-  //need to grab elementbyid in order to set innerHTML
-  let hTwoInnerText = document.getElementById("hTwo-Inner-Text");
-  hTwoInnerText.innerHTML = "Add group participants";
-
-  let modalHeaderIcon = document.getElementById("modal-header-icon");
-  modalHeaderIcon.innerHTML = "";
-
-  openModal();
-}
-
-function openProfileModal() {
-  let hTwoInnerText = document.getElementById("hTwo-Inner-Text");
-  hTwoInnerText.innerHTML = "Profile";
-
-  let modalHeaderIcon = document.getElementById("modal-header-icon");
-  modalHeaderIcon.innerHTML = "";
-
-  openModal();
-}
-
-function openSettingsModal() {
-  let hTwoInnerText = document.getElementById("hTwo-Inner-Text");
-  hTwoInnerText.innerHTML = "Settings";
-
-  let modalHeaderIcon = document.getElementById("modal-header-icon");
-  modalHeaderIcon.innerHTML = "";
-
-  openModal();
-}
-
-//-------------------CREATE EDIT PROFILE IMAGE------------------
+//-------------CREATE EDIT PROFILE IMAGE------------------
 
 function createEditProfileImage() {
   let imgWrap = document.createElement("div");
@@ -340,6 +370,8 @@ function createEditName() {
   modalContent.appendChild(staticTextWrap);
 }
 
+//--------CREATE EDIT ABOUT-----------
+
 function createEditAbout() {
   let editAboutWrap = document.createElement("div");
   editAboutWrap.classList.add("div-wrap");
@@ -367,22 +399,6 @@ function createEditAbout() {
 
   let modalContent = document.getElementById("modal-content-id");
   modalContent.appendChild(editAboutWrap);
-}
-
-function openIconProfileModal() {
-  let modalContent = document.getElementById("modal-content-id");
-  modalContent.innerHTML = "";
-
-  let hTwoInnerText = document.getElementById("hTwo-Inner-Text");
-  hTwoInnerText.innerHTML = "Profile";
-
-  let modalHeaderIcon = document.getElementById("modal-header-icon");
-  modalHeaderIcon.innerHTML = "";
-
-  createEditProfileImage();
-  createEditName();
-  createEditAbout();
-  openModal();
 }
 
 //---listen for CLOSE click
