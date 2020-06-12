@@ -432,11 +432,26 @@ function createSettingsModal(){
   profileName.innerHTML = "pikachu";
 
   let notificationDiv = document.createElement("div");
-  
-  notificationDiv.appendChild(notificationIcon);
-  notificationDiv.appendChild(Notification);
+  notificationDiv.innerHTML = '<i class="fa fa-bell"></i>';
+  notificationDiv.innerHTML = '<p class="setting-modal-p">notification</p>';
 
-  let notificationIcon = document.createElement("");
+  let ChatWallpaperDiv = document.createElement("div");
+  ChatWallpaperDiv.innerHTML = '<i class="fa fa-bell"></i>';
+  ChatWallpaperDiv.innerHTML = '<p class="setting-modal-p">notification</p>';
+
+  let BlockedDiv = document.createElement("div");
+  BlockedDiv.innerHTML = '<i class="fa fa-bell"></i>';
+  BlockedDiv.innerHTML = '<p class="setting-modal-p">notification</p>';
+
+  let HelpDiv = document.createElement("div");
+  HelpDiv.innerHTML = '<i class="fa fa-bell"></i>';
+  HelpDiv.innerHTML = '<p class="setting-modal-p">notification</p>';
+
+ 
+
+
+
+  
 
 }
 
