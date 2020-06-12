@@ -417,42 +417,64 @@ function createEditAbout() {
 
 // ------------CREATE SETTINGS MODAL--------------------
 
-function createSettingsModal(){
+function createSettingsModal() {
   let profileImgNameDiv = document.createElement("div");
-  
-  profileImgNameDiv.appendChild(miniProfileImg);
+  profileImgNameDiv.setAttribute("id", "profile-img-name-div-id");
 
   let miniProfileImg = document.createElement("img");
   miniProfileImg.setAttribute("src", "./images/icons8-pikachu-pokemon-50.png");
   miniProfileImg.setAttribute("alt", "mini profile image");
 
-  profileImgNameDiv.appendChild("profileName");
+  profileImgNameDiv.appendChild(miniProfileImg);
 
   let profileName = document.createElement("p");
+  profileName.setAttribute("id", "profile-name-id");
   profileName.innerHTML = "pikachu";
+
+  profileImgNameDiv.appendChild(profileName);
 
   let notificationDiv = document.createElement("div");
   notificationDiv.innerHTML = '<i class="fa fa-bell"></i>';
-  notificationDiv.innerHTML = '<p class="setting-modal-p">notification</p>';
+
+  let notificationP = document.createElement("p");
+  notificationP.classList.add("setting-modal-p");
+  notificationP.innerHTML = "notification";
+
+  notificationDiv.appendChild(notificationP);
 
   let ChatWallpaperDiv = document.createElement("div");
-  ChatWallpaperDiv.innerHTML = '<i class="fa fa-bell"></i>';
-  ChatWallpaperDiv.innerHTML = '<p class="setting-modal-p">notification</p>';
+  ChatWallpaperDiv.innerHTML = '<i class="material-icons"></i>';
+
+  let ChatWallpaperP = document.createElement("p");
+  ChatWallpaperP.classList.add("setting-modal-p");
+  ChatWallpaperP.innerHTML = "Chat Wallpaper";
+
+  ChatWallpaperDiv.appendChild(ChatWallpaperP);
 
   let BlockedDiv = document.createElement("div");
-  BlockedDiv.innerHTML = '<i class="fa fa-bell"></i>';
-  BlockedDiv.innerHTML = '<p class="setting-modal-p">notification</p>';
+  BlockedDiv.innerHTML = '<i class="fa fa-ban"></i>';
+
+  let BlockedP = document.createElement("p");
+  BlockedP.classList.add("setting-modal-p");
+  BlockedP.innerHTML = "Blocked";
+
+  BlockedDiv.appendChild(BlockedP);
 
   let HelpDiv = document.createElement("div");
-  HelpDiv.innerHTML = '<i class="fa fa-bell"></i>';
-  HelpDiv.innerHTML = '<p class="setting-modal-p">notification</p>';
+  HelpDiv.innerHTML = '<i class="fa fa-question-circle"></i>';
 
- 
+  let HelpP = document.createElement("p");
+  HelpP.classList.add("setting-modal-p");
+  HelpP.innerHTML = "Help";
 
+  HelpDiv.appendChild(HelpP);
 
-
-  
-
+  let modalContent = document.getElementById("modal-content-id");
+  modalContent.appendChild(profileImgNameDiv);
+  modalContent.appendChild(notificationDiv);
+  modalContent.appendChild(ChatWallpaperDiv);
+  modalContent.appendChild(BlockedDiv);
+  modalContent.appendChild(HelpDiv);
 }
 
 //---listen for CLOSE click
