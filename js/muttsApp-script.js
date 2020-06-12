@@ -438,12 +438,12 @@ function createSettingsModal() {
 
   let notificationP = document.createElement("p");
   notificationP.classList.add("setting-modal-p");
-  notificationP.innerHTML = "notification";
+  notificationP.innerHTML = "Notification";
 
   notificationDiv.appendChild(notificationP);
 
   let ChatWallpaperDiv = document.createElement("div");
-  ChatWallpaperDiv.innerHTML = '<i class="material-icons"></i>';
+  ChatWallpaperDiv.innerHTML = '<i class="material-icons">crop_original</i>';
 
   let ChatWallpaperP = document.createElement("p");
   ChatWallpaperP.classList.add("setting-modal-p");
