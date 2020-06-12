@@ -240,6 +240,7 @@ function openSettingsModal() {
   let modalHeaderIcon = document.getElementById("modal-header-icon");
   modalHeaderIcon.innerHTML = "";
 
+  createSettingsModal();
   openModal();
 }
 
@@ -412,6 +413,31 @@ function createEditAbout() {
 
   let modalContent = document.getElementById("modal-content-id");
   modalContent.appendChild(editAboutWrap);
+}
+
+// ------------CREATE SETTINGS MODAL--------------------
+
+function createSettingsModal(){
+  let profileImgNameDiv = document.createElement("div");
+  
+  profileImgNameDiv.appendChild(miniProfileImg);
+
+  let miniProfileImg = document.createElement("img");
+  miniProfileImg.setAttribute("src", "./images/icons8-pikachu-pokemon-50.png");
+  miniProfileImg.setAttribute("alt", "mini profile image");
+
+  profileImgNameDiv.appendChild("profileName");
+
+  let profileName = document.createElement("p");
+  profileName.innerHTML = "pikachu";
+
+  let notificationDiv = document.createElement("div");
+  
+  notificationDiv.appendChild(notificationIcon);
+  notificationDiv.appendChild(Notification);
+
+  let notificationIcon = document.createElement("");
+
 }
 
 //---listen for CLOSE click
