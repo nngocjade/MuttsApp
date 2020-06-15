@@ -437,7 +437,7 @@ function createSettingsModal() {
 
   let notificationDiv = document.createElement("div");
   notificationDiv.classList.add("settings-div");
-  notificationDiv.innerHTML = '<i class="fa fa-bell"></i>';
+  notificationDiv.innerHTML = '<i class="fa fa-bell setting-icon"></i>';
 
   let notificationP = document.createElement("p");
   notificationP.classList.add("setting-modal-p");
@@ -447,7 +447,7 @@ function createSettingsModal() {
 
   let ChatWallpaperDiv = document.createElement("div");
   ChatWallpaperDiv.classList.add("settings-div");
-  ChatWallpaperDiv.innerHTML = '<i class="material-icons">crop_original</i>';
+  ChatWallpaperDiv.innerHTML = '<i class="material-icons setting-icon">crop_original</i>';
 
   let ChatWallpaperP = document.createElement("p");
   ChatWallpaperP.classList.add("setting-modal-p");
@@ -457,7 +457,7 @@ function createSettingsModal() {
 
   let BlockedDiv = document.createElement("div");
   BlockedDiv.classList.add("settings-div");
-  BlockedDiv.innerHTML = '<i class="fa fa-ban"></i>';
+  BlockedDiv.innerHTML = '<i class="fa fa-ban setting-icon"></i>';
 
   let BlockedP = document.createElement("p");
   BlockedP.classList.add("setting-modal-p");
@@ -467,7 +467,7 @@ function createSettingsModal() {
 
   let HelpDiv = document.createElement("div");
   HelpDiv.classList.add("settings-div");
-  HelpDiv.innerHTML = '<i class="fa fa-question-circle"></i>';
+  HelpDiv.innerHTML = '<i class="fa fa-question-circle setting-icon"></i>';
 
   let HelpP = document.createElement("p");
   HelpP.classList.add("setting-modal-p");

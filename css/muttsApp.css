@@ -586,17 +586,37 @@ input[name="search"] {
   align-items: center;
   width: 100%;
   height: 4em;
+  margin-top: 1em;
+}
+
+.setting-icon{
+  margin: 1em;
+}
+
+.material-icons{
+  margin: .5em;
+}
+
+.setting-modal-p{
+  border-bottom: 1px solid rgb(231, 230, 230);
+  height: 100%;
+  width: 80%;
+  margin: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 #setting-modal-content-id{
   margin-top: 10px;
+  margin-bottom: 20em;
   display: flex;
   justify-content: flex-start;
 }
 
 #profile-img-name-div-id {
   width: 100%;
-  height: 10em;
+  height: 7em;
   display: flex;
   align-items: center;
   justify-content: flex-start;
