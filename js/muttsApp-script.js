@@ -436,6 +436,7 @@ function createSettingsModal() {
   profileImgNameDiv.appendChild(profileName);
 
   let notificationDiv = document.createElement("div");
+  notificationDiv.classList.add("settings-div");
   notificationDiv.innerHTML = '<i class="fa fa-bell"></i>';
 
   let notificationP = document.createElement("p");
@@ -445,6 +446,7 @@ function createSettingsModal() {
   notificationDiv.appendChild(notificationP);
 
   let ChatWallpaperDiv = document.createElement("div");
+  ChatWallpaperDiv.classList.add("settings-div");
   ChatWallpaperDiv.innerHTML = '<i class="material-icons">crop_original</i>';
 
   let ChatWallpaperP = document.createElement("p");
@@ -454,6 +456,7 @@ function createSettingsModal() {
   ChatWallpaperDiv.appendChild(ChatWallpaperP);
 
   let BlockedDiv = document.createElement("div");
+  BlockedDiv.classList.add("settings-div");
   BlockedDiv.innerHTML = '<i class="fa fa-ban"></i>';
 
   let BlockedP = document.createElement("p");
@@ -463,6 +466,7 @@ function createSettingsModal() {
   BlockedDiv.appendChild(BlockedP);
 
   let HelpDiv = document.createElement("div");
+  HelpDiv.classList.add("settings-div");
   HelpDiv.innerHTML = '<i class="fa fa-question-circle"></i>';
 
   let HelpP = document.createElement("p");

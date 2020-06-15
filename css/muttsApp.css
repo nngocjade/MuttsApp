@@ -580,10 +580,20 @@ input[name="search"] {
 }
 
 /* ------------------SETTINGS MODAL------------------ */
+.settings-div{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 4em;
+}
+
 #setting-modal-content-id{
   margin-top: 10px;
-  margin-left: 10px;
+  display: flex;
+  justify-content: flex-start;
 }
+
 #profile-img-name-div-id {
   width: 100%;
   height: 10em;
@@ -596,6 +606,8 @@ input[name="search"] {
   margin-left: 15px;
   margin-right: 15px;
 }
+
+
 
 /* ========================================================
                       MAIN CHAT
