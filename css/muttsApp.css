@@ -580,7 +580,7 @@ input[name="search"] {
 }
 
 /* ------------------SETTINGS MODAL------------------ */
-.settings-div{
+.settings-div {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -589,15 +589,17 @@ input[name="search"] {
   margin-top: 1em;
 }
 
-.setting-icon{
+.setting-icon {
   margin: 1em;
+  padding-left: 1em;
 }
 
-.material-icons{
-  margin: .5em;
+.material-icons {
+  margin: 0.5em;
+  padding-left: 0.7em;
 }
 
-.setting-modal-p{
+.setting-modal-p {
   border-bottom: 1px solid rgb(231, 230, 230);
   height: 100%;
   width: 80%;
@@ -607,7 +609,7 @@ input[name="search"] {
   align-items: center;
 }
 
-#setting-modal-content-id{
+#setting-modal-content-id {
   margin-top: 10px;
   margin-bottom: 20em;
   display: flex;
@@ -622,12 +624,10 @@ input[name="search"] {
   justify-content: flex-start;
 }
 
-#setting-mini-profile-img{
+#setting-mini-profile-img {
   margin-left: 15px;
   margin-right: 15px;
 }
-
-
 
 /* ========================================================
                       MAIN CHAT
