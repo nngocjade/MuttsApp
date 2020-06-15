@@ -420,10 +420,12 @@ function createEditAbout() {
 function createSettingsModal() {
   let profileImgNameDiv = document.createElement("div");
   profileImgNameDiv.setAttribute("id", "profile-img-name-div-id");
+  profileImgNameDiv.classList.add("img-wrap");
 
   let miniProfileImg = document.createElement("img");
   miniProfileImg.setAttribute("src", "./images/icons8-pikachu-pokemon-50.png");
   miniProfileImg.setAttribute("alt", "mini profile image");
+  miniProfileImg.setAttribute("id", "setting-mini-profile-img");
 
   profileImgNameDiv.appendChild(miniProfileImg);
 
@@ -470,6 +472,7 @@ function createSettingsModal() {
   HelpDiv.appendChild(HelpP);
 
   let modalContent = document.getElementById("modal-content-id");
+  modalContent.setAttribute("id", "setting-modal-content-id");
   modalContent.appendChild(profileImgNameDiv);
   modalContent.appendChild(notificationDiv);
   modalContent.appendChild(ChatWallpaperDiv);
