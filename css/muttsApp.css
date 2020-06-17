@@ -557,7 +557,6 @@ input[name="search"] {
 }
 
 /* ------------------CONTACT SECTION------------------ */
-
 .contact-preview-wrap {
   width: 100%;
   height: 100%;
@@ -587,6 +586,12 @@ input[name="search"] {
   width: 100%;
   height: 4em;
   margin-top: 1em;
+}
+
+.settings-div:hover {
+  background-color: rgb(231, 230, 230);
+  color: rgb(165, 164, 164);
+  cursor: pointer;
 }
 
 .setting-icon {
