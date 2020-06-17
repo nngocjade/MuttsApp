@@ -447,7 +447,8 @@ function createSettingsModal() {
 
   let ChatWallpaperDiv = document.createElement("div");
   ChatWallpaperDiv.classList.add("settings-div");
-  ChatWallpaperDiv.innerHTML = '<i class="material-icons setting-icon">crop_original</i>';
+  ChatWallpaperDiv.innerHTML =
+    '<i class="material-icons setting-icon">crop_original</i>';
 
   let ChatWallpaperP = document.createElement("p");
   ChatWallpaperP.classList.add("setting-modal-p");
@@ -476,7 +477,7 @@ function createSettingsModal() {
   HelpDiv.appendChild(HelpP);
 
   let modalContent = document.getElementById("modal-content-id");
-  modalContent.setAttribute("id", "setting-modal-content-id");
+  modalContent.classList.add("setting-modal-content-id");
   modalContent.appendChild(profileImgNameDiv);
   modalContent.appendChild(notificationDiv);
   modalContent.appendChild(ChatWallpaperDiv);
