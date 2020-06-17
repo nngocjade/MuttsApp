@@ -477,7 +477,7 @@ function createSettingsModal() {
   HelpDiv.appendChild(HelpP);
 
   let modalContent = document.getElementById("modal-content-id");
-  modalContent.classList.add("setting-modal-content-id");
+  modalContent.classList.add("setting-modal-content");
   modalContent.appendChild(profileImgNameDiv);
   modalContent.appendChild(notificationDiv);
   modalContent.appendChild(ChatWallpaperDiv);

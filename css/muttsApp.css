@@ -609,7 +609,7 @@ input[name="search"] {
   align-items: center;
 }
 
-#setting-modal-content-id {
+.setting-modal-content {
   margin-top: 10px;
   margin-bottom: 20em;
   display: flex;
