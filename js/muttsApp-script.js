@@ -675,4 +675,18 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// --------------------- PROFILE SLIDE OUT BAR ---------------------
+// --------------------- DROPDOWN ICON ATTACHMENTS ---------------------
+
+function createAttachmentDropdown() {
+  let PhotosAndVideosDiv = document.createElement("div");
+
+  let CameraDiv = document.createElement("div");
+
+  let DocumentsDiv = document.createElement("div");
+
+  let ContactDiv = document.createElement("div");
+
+  let RoomDiv = document.createElement("div");
+
+  let AttachmentButtonWrap = document.getElementById("paper-clip-icon-id");
+}
