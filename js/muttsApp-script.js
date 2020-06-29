@@ -678,28 +678,39 @@ window.addEventListener("DOMContentLoaded", () => {
 // --------------------- DROPDOWN ICON ATTACHMENTS ---------------------
 
 function createAttachmentDropdown() {
-  let photosAndVideosDiv = document.createElement("div");
-  photosAndVideosDiv.classList.add("icon-div");
-  photosAndVideosDiv.innerHTML =
+  let photosAndVideosWrap = document.createElement("div");
+  photosAndVideosWrap.classList.add("icon-wrap");
+  photosAndVideosWrap.setAttribute("id", "photo-and-video-wrap-id");
+  photosAndVideosWrap.innerHTML =
     '<i class="attachment-dropdown-icons far fa-image"></i>';
 
-  let cameraDiv = document.createElement("div");
-  cameraDiv.classList.add("icon-div");
-  cameraDiv.innerHTML =
+  let cameraWrap = document.createElement("div");
+  cameraWrap.classList.add("icon-wrap");
+  cameraWrap.setAttribute("id", "camera-wrap-id");
+  cameraWrap.innerHTML =
     '<i class="attachment-dropdown-icons fa fa-camera"></i>';
 
-  let documentsDiv = document.createElement("div");
-  documentsDiv.classList.add("icon-div");
-  documentsDiv.innerHTML = '<i class="attachment-dropdown-icons fa fa-file-o"';
+  let documentsWrap = document.createElement("div");
+  documentsWrap.classList.add("icon-wrap");
+  documentsWrap.setAttribute("id", "documents-wrap-id");
+  documentsWrap.innerHTML = '<i class="attachment-dropdown-icons fa fa-file-o"';
 
-  let contactDiv = document.createElement("div");
-  contactDiv.classList.add("icon-div");
-  contactDiv.innerHTML = '<i class="attachment-dropdown-icons fa fa-user"></i>';
+  let contactWrap = document.createElement("div");
+  contactWrap.classList.add("icon-wrap");
+  contactWrap.setAttribute("id", "contact-wrap-id");
+  contactWrap.innerHTML =
+    '<i class="attachment-dropdown-icons fa fa-user"></i>';
 
-  let roomDiv = document.createElement("div");
-  roomDiv.classList.add("icon-div");
-  roomDiv.innerHTML =
+  let roomWrap = document.createElement("div");
+  roomWrap.classList.add("icon-wrap");
+  roomWrap.setAttribute("id", "room-wrap-id");
+  roomWrap.innerHTML =
     '<i class="attachment-dropdown-icons fa fa-video-camera"></i>';
 
   let attachmentButtonWrap = document.getElementById("paper-clip-icon-id");
+  attachmentButtonWrap.appendChild(photosAndVideosWrap);
+  attachmentButtonWrap.appendChild(cameraWrap);
+  attachmentButtonWrap.appendChild(documentsWrap);
+  attachmentButtonWrap.appendChild(contactWrap);
+  attachmentButtonWrap.appendChild(roomWrap);
 }
