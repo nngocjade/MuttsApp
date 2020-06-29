@@ -678,15 +678,28 @@ window.addEventListener("DOMContentLoaded", () => {
 // --------------------- DROPDOWN ICON ATTACHMENTS ---------------------
 
 function createAttachmentDropdown() {
-  let PhotosAndVideosDiv = document.createElement("div");
+  let photosAndVideosDiv = document.createElement("div");
+  photosAndVideosDiv.classList.add("icon-div");
+  photosAndVideosDiv.innerHTML =
+    '<i class="attachment-dropdown-icons far fa-image"></i>';
 
-  let CameraDiv = document.createElement("div");
+  let cameraDiv = document.createElement("div");
+  cameraDiv.classList.add("icon-div");
+  cameraDiv.innerHTML =
+    '<i class="attachment-dropdown-icons fa fa-camera"></i>';
 
-  let DocumentsDiv = document.createElement("div");
+  let documentsDiv = document.createElement("div");
+  documentsDiv.classList.add("icon-div");
+  documentsDiv.innerHTML = '<i class="attachment-dropdown-icons fa fa-file-o"';
 
-  let ContactDiv = document.createElement("div");
+  let contactDiv = document.createElement("div");
+  contactDiv.classList.add("icon-div");
+  contactDiv.innerHTML = '<i class="attachment-dropdown-icons fa fa-user"></i>';
 
-  let RoomDiv = document.createElement("div");
+  let roomDiv = document.createElement("div");
+  roomDiv.classList.add("icon-div");
+  roomDiv.innerHTML =
+    '<i class="attachment-dropdown-icons fa fa-video-camera"></i>';
 
-  let AttachmentButtonWrap = document.getElementById("paper-clip-icon-id");
+  let attachmentButtonWrap = document.getElementById("paper-clip-icon-id");
 }
