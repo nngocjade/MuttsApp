@@ -742,3 +742,11 @@ input[name="message"] {
   width: 90%;
   outline: none; /* === this gets rid of the blue outline ===*/
 }
+
+/* ========================================================
+          ATTACHMENT DROPDOWN MENU
+==========================================================*/
+
+.attachment-dropdown-content {
+  display: none;
+}

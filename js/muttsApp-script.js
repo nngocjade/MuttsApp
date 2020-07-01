@@ -675,56 +675,40 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-//----------------------CLICK LISTENER DROPDOWN ICON ATTACHMENTS-------------
+// ------------------ON CLICK ATTACHMENT DROP DOWN MENU ------------------
 
-let paperClipDropdownButton = document.getElementById("paper-clip-icon-id");
+let AttachmentdropDownButton = document.getElementById("paper-clip-icon-id");
+
+let AttachmentDropdownContent = document.getElementById(
+  "attachment-dropdown-content-id"
+);
 
 // ------click to open menu
-paperClipDropdownButton.addEventListener("click", openPaperDropdownAttachments);
+AttachmentdropDownButton.addEventListener("click", openAttachmentDropdown);
 
 //--------function to open menu
-function openPaperDropdownAttachments() {
-  let attachmentButtonWrap = document.getElementById("paper-clip-icon-id");
-  attachmentButtonWrap.innerHTML = "";
-  createAttachmentDropdown();
+function openAttachmentDropdown(event) {
+  document
+    .getElementById("attachment-dropdown-content-id")
+    .classList.toggle("show");
 }
 
-// --------------------- DROPDOWN ICON ATTACHMENTS ---------------------
+//---Listen for OUTSIDE click
+//---this works for both sidebar and header main dropdown menu
+window.addEventListener("click", outsideClickAttachmentDropdownButton);
 
-function createAttachmentDropdown() {
-  let photosAndVideosWrap = document.createElement("div");
-  photosAndVideosWrap.classList.add("icon-wrap");
-  photosAndVideosWrap.setAttribute("id", "photo-and-video-wrap-id");
-  photosAndVideosWrap.innerHTML =
-    '<i class="attachment-dropdown-icons far fa-image"></i>';
-
-  let cameraWrap = document.createElement("div");
-  cameraWrap.classList.add("icon-wrap");
-  cameraWrap.setAttribute("id", "camera-wrap-id");
-  cameraWrap.innerHTML =
-    '<i class="attachment-dropdown-icons fa fa-camera"></i>';
-
-  let documentsWrap = document.createElement("div");
-  documentsWrap.classList.add("icon-wrap");
-  documentsWrap.setAttribute("id", "documents-wrap-id");
-  documentsWrap.innerHTML = '<i class="attachment-dropdown-icons fa fa-file-o"';
-
-  let contactWrap = document.createElement("div");
-  contactWrap.classList.add("icon-wrap");
-  contactWrap.setAttribute("id", "contact-wrap-id");
-  contactWrap.innerHTML =
-    '<i class="attachment-dropdown-icons fa fa-user"></i>';
-
-  let roomWrap = document.createElement("div");
-  roomWrap.classList.add("icon-wrap");
-  roomWrap.setAttribute("id", "room-wrap-id");
-  roomWrap.innerHTML =
-    '<i class="attachment-dropdown-icons fa fa-video-camera"></i>';
-
-  let attachmentButtonWrap = document.getElementById("paper-clip-icon-id");
-  attachmentButtonWrap.appendChild(photosAndVideosWrap);
-  attachmentButtonWrap.appendChild(cameraWrap);
-  attachmentButtonWrap.appendChild(documentsWrap);
-  attachmentButtonWrap.appendChild(contactWrap);
-  attachmentButtonWrap.appendChild(roomWrap);
+function outsideClickAttachmentDropdownButton(e) {
+  console.log(e.target.closest(".dropdown-button"));
+  if (!e.target.closest(".dropdown-button")) {
+    var dropdowns = document.getElementsByClassName(
+      "attachment-dropdown-content"
+    );
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var attachmentDropDown = dropdowns[i];
+      if (attachmentDropDown.classList.contains("show")) {
+        attachmentDropDown.classList.remove("show");
+      }
+    }
+  }
 }
