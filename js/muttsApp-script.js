@@ -675,6 +675,20 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+//----------------------CLICK LISTENER DROPDOWN ICON ATTACHMENTS-------------
+
+let paperClipDropdownButton = document.getElementById("paper-clip-icon-id");
+
+// ------click to open menu
+paperClipDropdownButton.addEventListener("click", openPaperDropdownAttachments);
+
+//--------function to open menu
+function openPaperDropdownAttachments() {
+  let attachmentButtonWrap = document.getElementById("paper-clip-icon-id");
+  attachmentButtonWrap.innerHTML = "";
+  createAttachmentDropdown();
+}
+
 // --------------------- DROPDOWN ICON ATTACHMENTS ---------------------
 
 function createAttachmentDropdown() {
