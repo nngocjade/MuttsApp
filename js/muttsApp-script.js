@@ -700,9 +700,7 @@ window.addEventListener("click", outsideClickAttachmentDropdownButton);
 function outsideClickAttachmentDropdownButton(e) {
   console.log(e.target.closest(".dropdown-button"));
   if (!e.target.closest(".dropdown-button")) {
-    var dropdowns = document.getElementsByClassName(
-      "attachment-dropdown-content"
-    );
+    var dropdowns = document.getElementById("attachment-dropdown-content-id");
     var i;
     for (i = 0; i < dropdowns.length; i++) {
       var attachmentDropDown = dropdowns[i];
