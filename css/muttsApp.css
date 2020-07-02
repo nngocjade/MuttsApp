@@ -747,17 +747,13 @@ input[name="message"] {
           ATTACHMENT DROPDOWN MENU
 ==========================================================*/
 
-/* .attachment.dropdown-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 6em;
-  background-color: none;
+#attachment-dropdown-content-id {
+  background-color: transparent;
+  box-shadow: none;
+  position: absolute;
+  top: 20px;
+  right: 27px;
 }
 
-
-
-#attachment-icon-wrap {
-  background-color: none;
+#attachment-dropdown-content-id > ul {
 }
- */
