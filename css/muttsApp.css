@@ -756,4 +756,19 @@ input[name="message"] {
 }
 
 #attachment-dropdown-content-id > ul {
+  height: 10em;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#photo-and-video-wrap-id {
+  background-image: url(/images/open-pokeball.svg);
+  opacity: 50%;
+  height: 3em;
+  width: 3em;
+  border-radius: 50%;
+}
+
+#attachment-dropdown-icons{
+  color: aqua;
 }
