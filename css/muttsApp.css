@@ -756,12 +756,16 @@ input[name="message"] {
 }
 
 #attachment-dropdown-content-id > ul {
-  height: 10em;
+  height: 17em;
   display: flex;
   justify-content: space-evenly;
 }
 
-#photo-and-video-wrap-id {
+#photo-and-video-wrap-id,
+#camera-wrap-id,
+#documents-wrap-id,
+#contact-wrap-id,
+#room-wrap-id {
   background-color: white;
   background-image: url(/images/open-pokeball1.png);
   background-repeat: none;
@@ -772,6 +776,6 @@ input[name="message"] {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: .2em;
+  margin-bottom: .2em;
 }
-
-
