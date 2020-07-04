@@ -759,6 +759,7 @@ input[name="message"] {
   height: 17em;
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
 }
 
 #photo-and-video-wrap-id,
@@ -766,8 +767,6 @@ input[name="message"] {
 #documents-wrap-id,
 #contact-wrap-id,
 #room-wrap-id {
-  background-color: white;
-  background-image: url(/images/open-pokeball1.png);
   background-repeat: none;
   background-size: 100%;
   height: 3em;
@@ -776,6 +775,27 @@ input[name="message"] {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: .2em;
-  margin-bottom: .2em;
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+  color: rgb(255, 255, 255);
+}
+
+#photo-and-video-wrap-id {
+  background-image: url(/images/open-pokeball.png);
+}
+#camera-wrap-id {
+  background-image: url(/images/ultra-ball.png);
+}
+#documents-wrap-id {
+  background-image: url(/images/superball.png);
+}
+#contact-wrap-id {
+  background-image: url(/images/ultra-ball.png);
+}
+#room-wrap-id {
+  background-image: url(/images/mega-ball.png);
+}
+
+.far.fa-image, .fa.fa-video-camera, .fa.fa-camera, .fa.fa-file, .fa.fa-user, .fa.fa-video-camera{
+  font-size: 24px;
 }
