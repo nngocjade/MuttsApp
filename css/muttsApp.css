@@ -767,6 +767,7 @@ input[name="message"] {
 #documents-wrap-id,
 #contact-wrap-id,
 #room-wrap-id {
+  background-color: white;
   background-repeat: none;
   background-size: 100%;
   height: 3em;
@@ -777,25 +778,30 @@ input[name="message"] {
   align-items: center;
   margin-top: 0.2em;
   margin-bottom: 0.2em;
-  color: rgb(255, 255, 255);
+  color: white;
 }
 
 #photo-and-video-wrap-id {
-  background-image: url(/images/open-pokeball.png);
+  background-image: url(/images/open-pokeball-opacity50percent.png);
 }
 #camera-wrap-id {
-  background-image: url(/images/ultra-ball.png);
+  background-image: url(/images/superball-opacity70percent.png);
 }
 #documents-wrap-id {
-  background-image: url(/images/superball.png);
+  background-image: url(/images/open-pokeball-blue-opacity70percent.png);
 }
 #contact-wrap-id {
-  background-image: url(/images/ultra-ball.png);
+  background-image: url(/images/open-pokeball-opacity50percent.png);
 }
 #room-wrap-id {
-  background-image: url(/images/mega-ball.png);
+  background-image: url(/images/mega-ball-opacity70percent.png);
 }
 
-.far.fa-image, .fa.fa-video-camera, .fa.fa-camera, .fa.fa-file, .fa.fa-user, .fa.fa-video-camera{
-  font-size: 24px;
+.far.fa-image,
+.fa.fa-video-camera,
+.fa.fa-camera,
+.fa.fa-file,
+.fa.fa-user,
+.fa.fa-video-camera {
+  font-size: 20px;
 }
